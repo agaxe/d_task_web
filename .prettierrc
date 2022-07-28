@@ -1,6 +1,19 @@
 {
-	"useTabs": true,
 	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"parser": "typescript",
+	"semi": true,
+	"useTabs": false,
+	"tabWidth": 2,
 	"trailingComma": "none",
-	"printWidth": 100
+	"printWidth": 80,
+	"arrowParens": "always",
+	"overrides": [
+		{
+			"files": ["*.css", "*.scss"],
+			"options": {
+				"parser": "css"
+			}
+		}
+	]
 }
