@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
     import App from '../App.svelte'
 </script>
 
@@ -7,9 +7,14 @@
   <h1 class="content__title">Test Page</h1>
   <p class="title">title</p>
 </div>
-</App>
+</App> -->
 
+ <div class="content">
+  <h1 class="content__title">Test Page</h1>
+  <p class="title">title----</p>
+ </div>
 
+ 
 <style lang="scss">
   $color-red: #f00;
   $color-orange : #00f;

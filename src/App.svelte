@@ -1,6 +1,15 @@
-<div>COMMON HTML</div>
+<header>
+    header
+</header>
+<main>
 <slot />
+</main>
+<footer>
+    footer
+</footer>
+
 
 <style lang="scss" global>
-    @use './style/global.scss';
+    //@use './style/global.scss';
+
 </style>
