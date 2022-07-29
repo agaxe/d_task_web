@@ -1,6 +1,14 @@
-<div class="content">
+<script lang="ts">
+    import App from '../App.svelte'
+</script>
+
+<App>
+  <div class="content">
   <h1 class="content__title">Test Page</h1>
+  <p class="title">title</p>
 </div>
+</App>
+
 
 <style lang="scss">
   $color-red: #f00;
@@ -12,5 +20,9 @@
     &__title{
       color:$color-orange;
     }
+  }
+
+  .title{
+    color:#00f
   }
 </style>
