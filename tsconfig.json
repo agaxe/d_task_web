@@ -2,12 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@components": [
-        "./src/components"
-      ],
+      "@/*": ["./src/*"],
+      "@components": ["./src/components"]
     },
     "target": "ESNEXT",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -24,7 +20,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  //"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js","**/*.jsx","**/*.svelte"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"],
   "exclude": ["node_modules"]
 }
