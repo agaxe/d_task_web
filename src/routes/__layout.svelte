@@ -3,6 +3,18 @@
   import '../style/global.scss';
 </script>
 
-<header>header</header>
+<header>
+  <ul>
+    <li>
+      <a href="/">home</a>
+    </li>
+    <li>
+      <a href="/test">test</a>
+    </li>
+    <li>
+      <a href="/type/1">type 1</a>
+    </li>
+  </ul>
+</header>
 <slot />
 <footer>footer</footer>
