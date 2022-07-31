@@ -1,18 +1,17 @@
 {
-	"singleQuote": true,
-	"jsxSingleQuote": true,
-	"semi": true,
-	"useTabs": false,
-	"tabWidth": 2,
-	"trailingComma": "none",
-	"printWidth": 80,
-	"arrowParens": "always",
-	"overrides": [
-		{
-			"files": ["*.css", "*.scss"],
-			"options": {
-				"parser": "css"
-			}
-		}
-	]
+  "singleQuote": true,
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "printWidth": 80,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
 }
