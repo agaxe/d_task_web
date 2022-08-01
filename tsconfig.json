@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@components": ["./src/components"]
+      "@components": ["./src/components"],
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"]
     },
     "target": "ESNEXT",
     "lib": ["dom", "dom.iterable", "esnext"],

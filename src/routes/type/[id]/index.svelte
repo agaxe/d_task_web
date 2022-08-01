@@ -1,6 +1,6 @@
 <script>
   import { page } from '$app/stores';
-  import { Seo } from '@/components';
+  import { Seo } from '$lib/components';
 
   const id = $page.params.id;
 </script>
