@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Seo } from '$lib/components';
+  import { Seo } from '@/components';
 </script>
 
 <Seo />
