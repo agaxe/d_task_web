@@ -1,8 +1,10 @@
+//* variable
 :root {
   --color-primary: #1463fd;
-  --color-white: rgb(167, 130, 130);
+  --color-white: #fff;
 }
 
+//* style
 .title {
   border: 3px solid #0f0;
   color: var(--color-primary);
