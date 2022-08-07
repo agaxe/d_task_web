@@ -19,6 +19,10 @@
 <script lang="ts">
   import { Test, Seo, Button } from '@/components';
   export let todoList: { title: string }[] = [];
+
+  function handleClickButton() {
+    console.log('click button');
+  }
 </script>
 
 <Seo page="TEST" />
@@ -33,7 +37,7 @@
   <br />
   <br />
 
-  <Button className="test-button">button</Button>
+  <Button className="test-button" onClick={handleClickButton}>button</Button>
 
   <ul>
     {#each todoList as todo}
