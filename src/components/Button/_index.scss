@@ -6,4 +6,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  &:enabled:hover {
+    background-color: #3678fd; //! 임시
+  }
+  &:enabled:active {
+    background-color: var(--color-primary); //! 임시
+  }
+  &:disabled {
+    background-color: #bfbfc0; //! 임시
+    cursor: not-allowed;
+  }
 }

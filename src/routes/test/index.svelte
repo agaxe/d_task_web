@@ -20,6 +20,7 @@
   import { Test, Seo, Button } from '@/components';
   export let todoList: { title: string }[] = [];
 
+  let isDisabled = false;
   function handleClickButton() {
     console.log('click button');
   }
@@ -37,8 +38,13 @@
   <br />
   <br />
 
-  <Button className="test-button" onClick={handleClickButton}>button</Button>
-
+  <Button className="test-button" onClick={handleClickButton} {isDisabled}
+    >button</Button
+  >
+  <br />
+  <Button className="test-button" onClick={() => (isDisabled = !isDisabled)}
+    >Toggle Button disabled</Button
+  >
   <ul>
     {#each todoList as todo}
       <li>
