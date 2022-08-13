@@ -1,24 +1,28 @@
 <script lang="ts">
   export let id = '';
-  export let name = '';
-  export let type = 'text';
-  export let value = '';
-  export let maxLength = 0;
-  export let placeholder = '';
-  export let readOnly = false;
-  export let onChange = (e: any) => {};
+  export let name: string = '';
+  export let type: string = 'text';
+  export let value: string | number = '';
+  export let placeholder: string = '';
+  export let maxLength: number = 9999;
+  export let readOnly: boolean = false;
+  export let pattern: string | undefined = undefined;
+
+  function typeAction(node: HTMLInputElement) {
+    node.type = type;
+  }
 </script>
 
 <input
   class="input"
   {id}
   {name}
-  {type}
-  {value}
+  use:typeAction
+  bind:value
   {placeholder}
   maxlength={maxLength}
   readonly={readOnly}
-  on:change={onChange}
+  {pattern}
 />
 
 <style lang="scss">
