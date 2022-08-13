@@ -17,13 +17,16 @@
 </script>
 
 <script lang="ts">
-  import { Test, Seo, Button } from '@/components';
+  import { Test, Seo, Button, Input } from '@/components';
   export let todoList: { title: string }[] = [];
 
-  let isDisabled = false;
+  let isBtnDisabled = false;
   function handleClickButton() {
     console.log('click button');
   }
+
+  let inputValue = '';
+  $: inputValueLength = inputValue?.length;
 </script>
 
 <Seo page="TEST" />
@@ -37,12 +40,31 @@
   <hr />
   <br />
   <br />
+  <form action="">
+    <p>
+      <Input type="number" value={inputValueLength} />
+    </p>
 
-  <Button className="test-button" onClick={handleClickButton} {isDisabled}
-    >button</Button
+    <p>
+      <Input bind:value={inputValue} />
+    </p>
+
+    <p>
+      <Input type="email" bind:value={inputValue} pattern=".+@gmail.com" />
+    </p>
+    <button type="submit">submit</button>
+  </form>
+  <br />
+  <br />
+  <Button
+    className="test-button"
+    onClick={handleClickButton}
+    isDisabled={isBtnDisabled}>button</Button
   >
   <br />
-  <Button className="test-button" onClick={() => (isDisabled = !isDisabled)}
+  <Button
+    className="test-button"
+    onClick={() => (isBtnDisabled = !isBtnDisabled)}
     >Toggle Button disabled</Button
   >
   <ul>
