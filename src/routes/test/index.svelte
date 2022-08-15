@@ -18,6 +18,7 @@
 
 <script lang="ts">
   import { Test, Seo, Button, Input } from '@/components';
+  import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
   let isBtnDisabled = false;
@@ -38,6 +39,12 @@
   <br />
   <br />
   <hr />
+  <div>
+    <h2>count : {$count}</h2>
+    <button on:click={() => count.update((n) => (n > 0 ? n - 1 : n))}>-</button>
+    <button on:click={() => count.update((n) => n + 1)}>+</button>
+    <button on:click={() => count.set(countInit)}>reset</button>
+  </div>
   <br />
   <br />
   <form action="">
