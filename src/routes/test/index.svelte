@@ -53,7 +53,7 @@
     </p>
 
     <p>
-      <Input bind:value={inputValue} />
+      <Input bind:value={inputValue} placeholder="내용 입력" />
     </p>
 
     <p>
