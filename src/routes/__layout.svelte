@@ -16,5 +16,13 @@
     </li>
   </ul>
 </header>
-<slot />
+<div class="container">
+  <slot />
+</div>
 <footer>footer</footer>
+
+<style lang="scss">
+  .container {
+    padding: 16px;
+  }
+</style>
