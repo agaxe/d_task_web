@@ -20,6 +20,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"],
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "./index.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

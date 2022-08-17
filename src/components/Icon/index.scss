@@ -1,0 +1,9 @@
+.icon-wrap {
+  fill: inherit;
+  & :global(.icon) {
+    appearance: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
