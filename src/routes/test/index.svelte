@@ -17,7 +17,7 @@
 </script>
 
 <script lang="ts">
-  import { Test, Seo, Button, Input } from '@/components';
+  import { Test, Seo, Button, Input, Icon } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
@@ -38,6 +38,9 @@
 
   <br />
   <br />
+  <Icon name="logo" class="logo-icon" />
+  <Icon name="folder" />
+  <Icon name="twitter" />
   <hr />
   <div>
     <h2>count : {$count}</h2>
