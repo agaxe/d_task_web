@@ -10,7 +10,6 @@
 </script>
 
 <div class={`icon-wrap ${$$restProps.class}`}>
-  <div class="test-icon">test-icon</div>
   <InlineSVG src={`/icons/icon_${name}.svg`} {...attributes} />
 </div>
 

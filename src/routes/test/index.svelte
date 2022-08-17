@@ -40,7 +40,7 @@
   <br />
   <Icon name="logo" class="logo-icon" />
   <Icon name="folder" />
-  <Icon name="twitter" />
+  <Icon name="twitter" class="logo-twitter" />
   <hr />
   <div>
     <h2>count : {$count}</h2>
@@ -67,14 +67,12 @@
   <br />
   <br />
   <Button
-    className="test-button"
+    class="test-button"
     onClick={handleClickButton}
     isDisabled={isBtnDisabled}>button</Button
   >
   <br />
-  <Button
-    className="test-button"
-    onClick={() => (isBtnDisabled = !isBtnDisabled)}
+  <Button class="test-button" onClick={() => (isBtnDisabled = !isBtnDisabled)}
     >Toggle Button disabled</Button
   >
   <ul>
@@ -86,10 +84,15 @@
   </ul>
 </div>
 
-<style lang="scss">
+<style lang="scss" module>
   .content {
-    & :global(.test-button) {
-      text-transform: uppercase;
+    border: 1px solid #f0f;
+    .test-button {
+      border: 3px solid #f00;
+    }
+    .logo-twitter {
+      width: 30px;
+      fill: #f00;
     }
   }
 </style>

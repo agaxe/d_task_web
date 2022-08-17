@@ -14,7 +14,7 @@
 </script>
 
 <input
-  class="input"
+  class={`input ${$$restProps.class}`}
   {id}
   {name}
   use:typeAction
