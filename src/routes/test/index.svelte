@@ -17,7 +17,7 @@
 </script>
 
 <script lang="ts">
-  import { Test, Seo, Button, Input, Icon } from '@/components';
+  import { Test, Seo, Button, Input, Icon, Logo } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
@@ -35,7 +35,12 @@
   <h1 class="content__title">Test Page</h1>
   <Test />
   <p class="title">global title</p>
-
+  <br />
+  <br />
+  <br />
+  <br />
+  <Logo class="main-logo" />
+  <br />
   <br />
   <br />
   <Icon name="logo" class="icon logo-icon" />
@@ -96,6 +101,9 @@
     .logo-twitter {
       width: 30px;
       fill: #f00;
+    }
+    .main-logo {
+      width: 300px;
     }
   }
 </style>
