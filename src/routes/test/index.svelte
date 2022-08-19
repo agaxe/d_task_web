@@ -38,9 +38,9 @@
 
   <br />
   <br />
-  <Icon name="logo" class="logo-icon" />
-  <Icon name="folder" />
-  <Icon name="twitter" class="logo-twitter" />
+  <Icon name="logo" class="icon logo-icon" />
+  <Icon name="folder" class="icon" />
+  <Icon name="twitter" class="icon logo-twitter" />
   <hr />
   <div>
     <h2>count : {$count}</h2>
@@ -89,6 +89,9 @@
     border: 1px solid #f0f;
     .test-button {
       border: 3px solid #f00;
+    }
+    .icon {
+      width: 50px;
     }
     .logo-twitter {
       width: 30px;

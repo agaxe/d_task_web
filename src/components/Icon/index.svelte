@@ -5,7 +5,9 @@
   export let name: string = '';
 
   $: attributes = {
-    class: 'icon'
+    class: 'icon',
+    width: 'unset',
+    height: 'unset'
   };
 </script>
 
