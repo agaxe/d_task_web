@@ -17,7 +17,7 @@
 </script>
 
 <script lang="ts">
-  import { Test, Seo, Button, Input, Icon, Logo } from '@/components';
+  import { Test, Seo, Button, Input, Icon, Logo, Textarea } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
@@ -28,6 +28,8 @@
 
   let inputValue = '';
   $: inputValueLength = inputValue?.length;
+
+  let textareaValue = '';
 </script>
 
 <Seo page="TEST" />
@@ -37,6 +39,14 @@
   <p class="title">global title</p>
   <br />
   <br />
+  <p>
+    textarea value : {textareaValue}
+  </p>
+  <Textarea
+    class="main-textarea"
+    bind:value={textareaValue}
+    placeholder="상세 입력"
+  />
   <br />
   <br />
   <Logo class="main-logo" />
@@ -103,6 +113,10 @@
       fill: #f00;
     }
     .main-logo {
+      width: 300px;
+    }
+    .main-textarea {
+      height: 300px;
       width: 300px;
     }
   }
