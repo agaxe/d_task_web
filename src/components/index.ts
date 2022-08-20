@@ -4,3 +4,4 @@ export { default as Button } from './Button/index.svelte';
 export { default as Input } from './Input/index.svelte';
 export { default as Icon } from './Icon/index.svelte';
 export { default as Logo } from './Logo/index.svelte';
+export { default as Textarea } from './Textarea/index.svelte';

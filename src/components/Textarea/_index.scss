@@ -1,0 +1,12 @@
+.textarea {
+  overflow: hidden;
+  overflow-y: scroll;
+  resize: none;
+  font-family: Pretendard, sans-serif;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #aaaaab; //! 임시
+  }
+}
