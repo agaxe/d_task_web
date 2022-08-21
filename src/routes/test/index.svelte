@@ -17,7 +17,16 @@
 </script>
 
 <script lang="ts">
-  import { Test, Seo, Button, Input, Icon, Logo, Textarea } from '@/components';
+  import {
+    Test,
+    Seo,
+    Button,
+    Input,
+    Icon,
+    Logo,
+    Textarea,
+    Image
+  } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
@@ -48,6 +57,8 @@
     placeholder="상세 입력"
   />
   <br />
+
+  <Image src="/images/temp-img.jpg" />
   <br />
   <Logo class="main-logo" />
   <br />
