@@ -6,8 +6,8 @@
 
   $: attributes = {
     class: 'icon',
-    width: 'unset',
-    height: 'unset'
+    width: '100%',
+    height: '100%'
   };
 </script>
 
