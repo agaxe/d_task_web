@@ -25,7 +25,8 @@
     Icon,
     Logo,
     Textarea,
-    Image
+    Image,
+    Chip
   } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
@@ -46,6 +47,17 @@
   <h1 class="content__title">Test Page</h1>
   <Test />
   <p class="title">global title</p>
+
+  <Chip text="chip" theme="pink" />
+  <Chip text="chip" theme="green" />
+  <Chip text="chip" theme="blue" />
+  <Chip text="chip" theme="bronze" />
+  <Chip text="chip" theme="purple" />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   <br />
   <br />
   <p>
