@@ -13,7 +13,7 @@
 
   $colors: (pink, green, blue, bronze, purple);
   @each $color in $colors {
-    &.#{$color} {
+    &.#{'' + $color} {
       color: var(--color-#{$color});
       background-color: var(--color-bg-#{$color});
     }
