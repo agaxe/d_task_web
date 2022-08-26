@@ -7,3 +7,4 @@ export { default as Logo } from './Logo/index.svelte';
 export { default as Textarea } from './Textarea/index.svelte';
 export { default as Image } from './Image/index.svelte';
 export { default as Chip } from './Chip/index.svelte';
+export { default as MessageBox } from './MessageBox/index.svelte';
