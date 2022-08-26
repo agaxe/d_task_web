@@ -26,7 +26,8 @@
     Logo,
     Textarea,
     Image,
-    Chip
+    Chip,
+    MessageBox
   } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
@@ -47,7 +48,23 @@
   <h1 class="content__title">Test Page</h1>
   <Test />
   <p class="title">global title</p>
-
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="test-msg__list">
+    <MessageBox text="받은 메시지" />
+    <MessageBox text="보낸 메시지" isMyMsg />
+    <MessageBox
+      text="보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 보낸 메시지 "
+      isMyMsg
+      class="test-msg__item"
+    />
+  </div>
+  <br />
+  <br />
+  <br />
   <Chip text="chip" theme="pink" />
   <Chip text="chip" theme="green" />
   <Chip text="chip" theme="blue" />
@@ -141,6 +158,16 @@
     .main-textarea {
       height: 300px;
       width: 300px;
+    }
+    .test {
+      &-msg {
+        &__list {
+          width: 250px;
+        }
+        &__item {
+          width: 100%;
+        }
+      }
     }
   }
 </style>
