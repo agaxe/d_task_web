@@ -28,7 +28,8 @@
     Image,
     Chip,
     MessageBox,
-    Profile
+    Profile,
+    Lottie
   } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
@@ -47,6 +48,22 @@
 <Seo page="TEST" />
 <div class="content">
   <h1 class="content__title">Test Page</h1>
+  <br />
+  <br />
+  <br />
+  <br />
+  <Lottie
+    id="animation1"
+    class="animation-box"
+    path="https://assets9.lottiefiles.com/temporary_files/r5WAZZ.json"
+    loop
+  />
+  <Lottie
+    id="animation2"
+    class="animation-box"
+    path="https://assets6.lottiefiles.com/packages/lf20_OT15QW.json"
+    loop
+  />
   <br />
   <br />
   <br />
@@ -187,6 +204,10 @@
         width: 200px;
         height: 200px;
       }
+    }
+
+    .animation-box {
+      width: 300px;
     }
   }
 </style>
