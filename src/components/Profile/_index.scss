@@ -1,0 +1,23 @@
+.profile {
+  border-radius: 50%;
+  overflow: hidden;
+  & :global(.profile-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  //* size theme
+  &.size {
+    $size-theme: (
+      'md': 56px,
+      'lg': 126px
+    );
+    @each $key, $value in $size-theme {
+      &-#{'' + $key} {
+        width: $value;
+        height: $value;
+      }
+    }
+  }
+}
