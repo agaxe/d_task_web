@@ -27,7 +27,8 @@
     Textarea,
     Image,
     Chip,
-    MessageBox
+    MessageBox,
+    Profile
   } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
@@ -46,6 +47,20 @@
 <Seo page="TEST" />
 <div class="content">
   <h1 class="content__title">Test Page</h1>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <Profile class="test-profile" src="/images/temp-img.jpg" />
+  <Profile class="test-profile" src="/images/temp-img.jpg" size="md" />
+  <Profile class="test-profile" src="/images/temp-img.jpg" size="lg" />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
   <Test />
   <p class="title">global title</p>
   <br />
@@ -167,6 +182,10 @@
         &__item {
           width: 100%;
         }
+      }
+      &-profile {
+        width: 200px;
+        height: 200px;
       }
     }
   }
