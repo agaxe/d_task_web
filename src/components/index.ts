@@ -9,3 +9,4 @@ export { default as Image } from './Image/index.svelte';
 export { default as Chip } from './Chip/index.svelte';
 export { default as MessageBox } from './MessageBox/index.svelte';
 export { default as Profile } from './Profile/index.svelte';
+export { default as Lottie } from './Lottie/index.svelte';
