@@ -41,6 +41,7 @@
       }
       .icon-feature {
         width: 24px;
+        height: 24px;
         margin-right: 16px;
       }
       .text {
@@ -48,6 +49,7 @@
       }
       .icon-chevron {
         width: 10px;
+        height: 10px;
         margin-left: auto;
         &.active {
           transform: rotate(180deg);
@@ -63,6 +65,7 @@
       cursor: pointer;
       .icon {
         width: 24px;
+        height: 24px;
         margin-right: 16px;
       }
       .text {

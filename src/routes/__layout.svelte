@@ -4,19 +4,20 @@
   import { Header } from '@/components';
 </script>
 
-<div id="wrap">
-  <Header />
-  <div class="container">
-    <slot />
-  </div>
-  .
-</div>
+<!-- //! 라우팅 테스트 영역 -->
+<ul class="temp-menu">
+  <li><a href="/">home</a></li>
+  <li><a href="/test">test</a></li>
+</ul>
+<br />
+<slot />
 
-<style lang="scss">
-  #wrap {
-    display: grid;
-    grid-template-columns: var(--layout-header-w) 1fr;
-    width: 100%;
-    height: 100%;
+<style>
+  .temp-menu {
+    position: fixed;
+    background-color: #f00;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
   }
 </style>
