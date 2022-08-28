@@ -1,12 +1,5 @@
 .profile {
-  border-radius: 50%;
-  overflow: hidden;
-  & :global(.profile-img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+  position: relative;
   //* size theme
   &.size {
     $size-theme: (
@@ -18,7 +11,34 @@
       &-#{'' + $key} {
         width: $value;
         height: $value;
+        .profile__online {
+          $badge-size: calc(#{$value} / 4);
+          width: $badge-size;
+          height: $badge-size;
+        }
       }
     }
+  }
+  &__inner {
+    border-radius: 50%;
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+  }
+  & :global(.profile-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__online {
+    $badge-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: $badge-size;
+    height: $badge-size;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    background-color: var(--color-green);
   }
 }
