@@ -1,0 +1,76 @@
+#header {
+  height: 100%;
+  .inner {
+    $common-rows: minmax(auto, 80px);
+    display: grid;
+    grid-template-rows: $common-rows minmax(auto, 100vh) $common-rows;
+    width: var(--layout-header-w);
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .logo-wrap {
+    padding: 24px;
+    & :global(.logo) {
+      width: 80px;
+    }
+  }
+  .menu {
+    &-list {
+      overflow-y: auto;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+      cursor: pointer;
+      position: relative;
+      &.active {
+        &::before {
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          content: '';
+          width: 4px;
+          height: 40px;
+          background-color: var(--color-primary);
+        }
+      }
+      .icon-feature {
+        width: 24px;
+        margin-right: 16px;
+      }
+      .text {
+        color: #555556; // !임시
+      }
+      .icon-chevron {
+        width: 10px;
+        margin-left: auto;
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .bottom {
+    .logout-wrap {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+      cursor: pointer;
+      .icon {
+        width: 24px;
+        margin-right: 16px;
+      }
+      .text {
+        font-size: 16px;
+        font-weight: 500;
+        color: #555556; //! 임시
+        line-height: 1.2;
+      }
+    }
+  } // .bottom
+}

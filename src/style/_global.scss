@@ -19,10 +19,18 @@
   --color-bg-blue: #e9effd;
   --color-bg-bronze: #fdf7e6;
   --color-bg-purple: #f3ebff;
+
+  // layout
+  --layout-header-w: 300px;
 }
 
 //* style
 .title {
   border: 3px solid #0f0;
   color: var(--color-primary);
+}
+.custom-scroll {
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 }
