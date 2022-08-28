@@ -9,7 +9,7 @@
   {#if src}
     <Image class="profile-img" {src} alt="profile-img" />
   {:else}
-    <Icon name="profile-empty" />
+    <Icon name="profile" />
   {/if}
 </div>
 
