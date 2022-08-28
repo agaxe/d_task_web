@@ -69,6 +69,7 @@
   <br />
   <br />
   <br />
+  <Profile class="test-profile" size="sm" />
   <Profile class="test-profile" src="/images/temp-img.jpg" />
   <Profile class="test-profile" src="/images/temp-img.jpg" size="md" />
   <Profile class="test-profile" src="/images/temp-img.jpg" size="lg" />

@@ -2,7 +2,7 @@
   import { Image, Icon } from '@/components';
 
   export let src: string = '';
-  export let size: 'md' | 'lg' | '' = '';
+  export let size: 'md' | 'lg' | 'sm' | '' = '';
 </script>
 
 <div class={`profile ${$$restProps.class || ''} size-${size}`}>

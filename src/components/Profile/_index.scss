@@ -10,8 +10,9 @@
   //* size theme
   &.size {
     $size-theme: (
+      'lg': 126px,
       'md': 56px,
-      'lg': 126px
+      'sm': 32px
     );
     @each $key, $value in $size-theme {
       &-#{'' + $key} {
