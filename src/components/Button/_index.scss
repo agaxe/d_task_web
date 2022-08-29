@@ -1,11 +1,13 @@
 .button {
-  padding: 16px;
+  padding: 20px 16px;
   color: var(--color-white);
   background-color: var(--color-primary);
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
+  line-height: 1.18;
   &:enabled:hover {
     background-color: #3678fd; //! 임시
   }
