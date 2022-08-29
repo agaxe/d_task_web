@@ -7,6 +7,6 @@
     outline: none;
   }
   &::placeholder {
-    color: #aaaaab; //! 임시
+    color: var(--color-gray-40);
   }
 }

@@ -13,7 +13,7 @@
     background-color: var(--color-primary); //! 임시
   }
   &:disabled {
-    background-color: #bfbfc0; //! 임시
+    background-color: var(--color-gray-30);
     cursor: not-allowed;
   }
 }
