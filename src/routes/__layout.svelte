@@ -9,7 +9,6 @@
   <li><a href="/">home</a></li>
   <li><a href="/test">test</a></li>
 </ul>
-<br />
 <slot />
 
 <style>

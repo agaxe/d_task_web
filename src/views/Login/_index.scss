@@ -1,0 +1,68 @@
+@import '../../style/mixin';
+
+#login-page {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bg {
+    &-icon {
+      position: absolute;
+    }
+    &-top {
+      left: 0;
+      top: 0;
+      width: 50%;
+    }
+    &-bottom {
+      right: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  } // .bg
+  .inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 400px 800px;
+    grid-gap: 14%; // 270px
+    align-items: center;
+    justify-content: center;
+    @include responsive-lg {
+      grid-template-columns: 400px 600px;
+    }
+  }
+  .content {
+    &-form {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      grid-gap: 48px;
+      &__logo {
+        width: 187px;
+        height: 64px;
+        justify-self: center;
+      }
+      &__item {
+        margin-bottom: 32px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &__label {
+        display: block;
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        line-height: 1.18;
+      }
+      &__input {
+        width: 100%;
+      }
+      &__btn {
+        width: 100%;
+      }
+    } // .content-form__{}
+  } // .content-{}
+}
