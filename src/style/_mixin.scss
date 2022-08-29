@@ -1,0 +1,12 @@
+@function box-shadow-border($px, $color) {
+  @return inset 0 0 0 $px $color;
+}
+
+//* responsive
+$screen-lg: 1440px;
+
+@mixin responsive-lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
