@@ -16,7 +16,7 @@
   <Icon class="bg-icon bg-top" name="login-bg-top" />
   <div class="inner">
     <div class="content-form">
-      <Logo class="content-form__logo" />
+      <Logo class="content-form__logo" isLink={false} />
       <ul class="content-form__list">
         {#each loginFormInfoList as item, i (i)}
           <li class="content-form__item">
