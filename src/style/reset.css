@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  color: inherit;
 }
 *,
 :after,
@@ -23,6 +22,7 @@ html,
 body {
   height: 100%;
   font-family: 'Pretendard', sans-serif;
+  color: var(--color-gray-100);
 }
 img,
 picture,
