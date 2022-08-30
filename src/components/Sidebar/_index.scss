@@ -1,5 +1,6 @@
 #sidebar {
   height: 100%;
+  border-right: 1px solid var(--color-gray-10);
   .inner {
     $common-rows: minmax(auto, 80px);
     display: grid;
