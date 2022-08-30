@@ -1,5 +1,5 @@
 <script>
-  import { Sidebar } from '@/components';
+  import { Sidebar, Header } from '@/components';
 </script>
 
 <!-- 
@@ -15,10 +15,15 @@
 <div id="wrap">
   <Sidebar />
   <div class="container">
+    <Header />
     <slot />
   </div>
 </div>
 
 <style lang="scss">
   @use './index';
+
+  .container {
+    padding-top: var(--layout-header-h);
+  }
 </style>

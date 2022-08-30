@@ -12,3 +12,4 @@ export { default as Profile } from './Profile/index.svelte';
 export { default as Lottie } from './Lottie/index.svelte';
 export { default as Sidebar } from './Sidebar/index.svelte';
 export { default as Layout } from './Layout/index.svelte';
+export { default as Header } from './Header/index.svelte';

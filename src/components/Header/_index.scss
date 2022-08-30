@@ -1,0 +1,30 @@
+#header {
+  position: fixed;
+  left: var(--layout-sidebar-w);
+  top: 0;
+  z-index: 1000;
+  width: calc(100% - var(--layout-sidebar-w));
+  height: var(--layout-header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray-10);
+  padding: 12px 32px;
+  background-color: var(--color-white);
+  .title {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+  .right-area {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 32px;
+    align-items: center;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
