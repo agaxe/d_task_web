@@ -3,6 +3,7 @@
   // export let name: string = '';
   // export let type: string = 'text';
   export let value: string | number = '';
+  export let ref = null;
   // export let placeholder: string = '';
   // export let maxLength: number = 9999;
   // export let readOnly: boolean = false;
@@ -13,10 +14,17 @@
   // }
 
   interface $$Props
-    extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['input']> {}
+    extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['input']> {
+    ref: any;
+  }
 </script>
 
-<input {...$$restProps} class={`input ${$$restProps.class}`} bind:value />
+<input
+  {...$$restProps}
+  class={`input ${$$restProps.class}`}
+  bind:value
+  bind:this={ref}
+/>
 
 <!-- <input
   class={`input ${$$restProps.class}`}

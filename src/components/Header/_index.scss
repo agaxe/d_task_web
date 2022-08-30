@@ -25,6 +25,35 @@
     .icon {
       width: 24px;
       height: 24px;
+      cursor: pointer;
     }
-  }
+    .search {
+      position: relative;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      .icon {
+        position: relative;
+        z-index: 1;
+      }
+      &-input {
+        $time: 0.3s;
+        position: absolute;
+        right: -16px;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        padding-right: 48px;
+        opacity: 1;
+        transition: width $time;
+        width: 316px;
+        &.inactive {
+          width: 0;
+          padding: 0;
+          opacity: 0;
+        }
+      }
+    } // .search
+  } // .right-area
 }
