@@ -1,10 +1,10 @@
-#header {
+#sidebar {
   height: 100%;
   .inner {
     $common-rows: minmax(auto, 80px);
     display: grid;
     grid-template-rows: $common-rows minmax(auto, 100vh) $common-rows;
-    width: var(--layout-header-w);
+    width: var(--layout-sidebar-w);
     height: 100%;
     position: fixed;
     left: 0;

@@ -1,5 +1,5 @@
 <script>
-  import { Header } from '@/components';
+  import { Sidebar } from '@/components';
 </script>
 
 <!-- 
@@ -13,7 +13,7 @@
   ```
  -->
 <div id="wrap">
-  <Header />
+  <Sidebar />
   <div class="container">
     <slot />
   </div>
