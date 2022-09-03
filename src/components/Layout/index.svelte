@@ -14,10 +14,10 @@
  -->
 <div id="wrap">
   <Sidebar />
-  <div class="container">
+  <main class="container">
     <Header />
     <slot />
-  </div>
+  </main>
 </div>
 
 <style lang="scss">

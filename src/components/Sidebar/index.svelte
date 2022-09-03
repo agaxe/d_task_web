@@ -3,7 +3,7 @@
   import { menuList } from './data';
 </script>
 
-<aside id="sidebar">
+<nav id="sidebar">
   <div class="inner">
     <div class="logo-wrap">
       <Logo class="logo" />
@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-</aside>
+</nav>
 
 <style lang="scss" module>
   @use './index';
