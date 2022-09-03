@@ -4,9 +4,28 @@
 
 <Seo />
 <Layout>
-  <h1>Welcome to SvelteKitdfsdfsdf</h1>
-  <p>
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-  </p>
-  <p class="title">global title</p>
+  {#if false}
+    <div />
+  {:else}
+    <div class="empty-project">
+      <p class="text">프로젝트를 등록해주세요</p>
+    </div>
+  {/if}
 </Layout>
+
+<style lang="scss">
+  .empty-project {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text {
+      user-select: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.18;
+      color: var(--color-gray-60);
+    }
+  }
+</style>

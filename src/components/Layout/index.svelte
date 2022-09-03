@@ -24,6 +24,9 @@
   @use './index';
 
   .container {
-    padding-top: var(--layout-header-h);
+    $pd: 32px;
+    padding: $pd;
+    padding-top: calc(var(--layout-header-h) + #{$pd});
+    background-color: #f4f7f9;
   }
 </style>
