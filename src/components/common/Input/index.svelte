@@ -15,7 +15,7 @@
 
   interface $$Props
     extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['input']> {
-    ref: any;
+    ref?: any;
   }
 </script>
 
