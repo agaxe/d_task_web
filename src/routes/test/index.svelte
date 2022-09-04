@@ -30,7 +30,7 @@
     MessageBox,
     Profile,
     Lottie,
-    Layout
+    Container
   } from '@/components';
   import { count, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
@@ -47,7 +47,7 @@
 </script>
 
 <Seo page="TEST" />
-<Layout>
+<Container>
   <div class="content">
     <h1 class="content__title">Test Page</h1>
     <br />
@@ -180,7 +180,7 @@
       {/each}
     </ul>
   </div>
-</Layout>
+</Container>
 
 <style lang="scss" module>
   .content {

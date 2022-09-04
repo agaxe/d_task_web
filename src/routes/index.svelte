@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Seo, Layout } from '@/components';
+  import { Seo, Container } from '@/components';
 </script>
 
 <Seo />
-<Layout>
+<Container>
   {#if false}
     <div />
   {:else}
@@ -11,7 +11,7 @@
       <p class="text">프로젝트를 등록해주세요</p>
     </div>
   {/if}
-</Layout>
+</Container>
 
 <style lang="scss">
   .empty-project {

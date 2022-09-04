@@ -11,5 +11,5 @@ export { default as MessageBox } from './common/MessageBox/index.svelte';
 export { default as Profile } from './common/Profile/index.svelte';
 export { default as Lottie } from './common/Lottie/index.svelte';
 export { default as Sidebar } from './Layout/Sidebar/index.svelte';
-export { default as Layout } from './Layout/Container/index.svelte';
+export { default as Container } from './Layout/Container/index.svelte';
 export { default as Header } from './Layout/Header/index.svelte';

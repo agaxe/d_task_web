@@ -4,12 +4,12 @@
 
 <!-- 
   @component
-  - 헤더 및 컨텐츠 레이아웃 컴포넌트입니다.
+  - 헤더 및 컨텐츠 컨테이너 컴포넌트입니다.
   
   ```tsx
-  <Layout>
+  <Container>
     <Slot/>
-  </Layout>
+  </Container>
   ```
  -->
 <div id="wrap">
