@@ -1,3 +1,4 @@
+//* common
 export { default as Test } from './common/Test/index.svelte';
 export { default as Seo } from './common/Seo/index.svelte';
 export { default as Button } from './common/Button/index.svelte';
@@ -10,6 +11,9 @@ export { default as Chip } from './common/Chip/index.svelte';
 export { default as MessageBox } from './common/MessageBox/index.svelte';
 export { default as Profile } from './common/Profile/index.svelte';
 export { default as Lottie } from './common/Lottie/index.svelte';
+export { default as Title } from './common/Title/index.svelte';
+
+//* layout
 export { default as Sidebar } from './Layout/Sidebar/index.svelte';
 export { default as Container } from './Layout/Container/index.svelte';
 export { default as Header } from './Layout/Header/index.svelte';
