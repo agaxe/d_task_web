@@ -1,3 +1,6 @@
+import { Page } from '@sveltejs/kit';
+import { goto } from '$app/navigation';
+
 export function clickOutSide(node: any) {
   function handleClick(event: any) {
     if (!node.contains(event.target)) {
@@ -11,4 +14,12 @@ export function clickOutSide(node: any) {
       document.removeEventListener('click', handleClick, true);
     }
   };
+}
+
+export function setQueryString(
+  page: Page,
+  { key, value }: { key: string; value: string }
+) {
+  page.url.searchParams.set(key, value);
+  goto(`?${page.url.searchParams.toString()}`);
 }

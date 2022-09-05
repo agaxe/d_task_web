@@ -1,7 +1,5 @@
 <script lang="ts">
   import { Title, Input } from '@/components';
-
-  let msgText = '';
 </script>
 
 <aside id="aside" class={`${$$restProps.class || ''}`}>
@@ -9,12 +7,7 @@
   <div class="msg-wrap">
     <div class="msg-box" />
     <div class="msg-input-box">
-      <Input
-        iconName="send"
-        iconAlign="RIGHT"
-        class="msg-input"
-        bind:value={msgText}
-      />
+      <Input iconName="send" iconAlign="RIGHT" class="msg-input" />
     </div>
   </div>
 </aside>

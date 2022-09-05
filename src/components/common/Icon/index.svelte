@@ -11,7 +11,7 @@
   };
 </script>
 
-<div class={`icon-wrap ${$$restProps.class}`}>
+<div class={`icon-wrap ${$$restProps.class}`} on:click>
   <InlineSVG src={`/icons/icon_${name}.svg`} {...attributes} />
 </div>
 
