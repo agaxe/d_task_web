@@ -1,5 +1,32 @@
 @import '../../../style/mixin';
 
+@mixin icon-align($align) {
+  &.icon-#{$align} {
+    .input {
+      padding-#{$align}: 48px;
+    }
+    .input-icon {
+      #{$align}: 16px;
+    }
+  }
+}
+.input {
+  &-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include icon-align('left');
+    @include icon-align('right');
+  }
+  &-icon {
+    position: absolute;
+    & :global(.icon) {
+      $size: 24px;
+      width: $size;
+      height: $size;
+    }
+  }
+}
 .input {
   $time: 0.2s;
   border-radius: 10px;
@@ -13,6 +40,7 @@
   line-height: 1.2;
   font-size: inherit;
   font-weight: 400;
+  width: 100%;
   &:hover {
     background-color: #f6f9ff;
   }

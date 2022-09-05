@@ -1,9 +1,13 @@
 <script lang="ts">
+  import { Icon } from '@/components';
   // export let id = '';
   // export let name: string = '';
   // export let type: string = 'text';
   export let value: string | number = '';
   export let ref = null;
+
+  export let iconName = '';
+  export let iconAlign = 'NONE';
   // export let placeholder: string = '';
   // export let maxLength: number = 9999;
   // export let readOnly: boolean = false;
@@ -16,15 +20,28 @@
   interface $$Props
     extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['input']> {
     ref?: any;
+    iconName?: string;
+    iconAlign?: 'LEFT' | 'RIGHT';
   }
 </script>
 
-<input
-  {...$$restProps}
-  class={`input ${$$restProps.class}`}
-  bind:value
-  bind:this={ref}
-/>
+{#if iconName}
+  <div
+    class={`input-wrap icon-${iconAlign.toLowerCase()} ${$$restProps.class}`}
+  >
+    <div class="input-icon">
+      <Icon name={iconName} />
+    </div>
+    <input {...$$restProps} class={`input`} bind:value bind:this={ref} />
+  </div>
+{:else}
+  <input
+    {...$$restProps}
+    class={`input ${$$restProps.class}`}
+    bind:value
+    bind:this={ref}
+  />
+{/if}
 
 <!-- <input
   class={`input ${$$restProps.class}`}

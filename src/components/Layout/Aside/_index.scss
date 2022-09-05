@@ -1,0 +1,29 @@
+#aside {
+  $pd-hor: 24px;
+  height: 100%;
+  overflow-y: auto;
+  padding: $pd-hor 16px;
+  padding-top: calc(var(--layout-header-h) + $pd-hor);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 24px;
+  .title {
+    font-size: 16px;
+    user-select: none;
+  }
+  .msg {
+    &-wrap {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      row-gap: 24px;
+    }
+    &-box {
+      padding: 20px 0;
+      border: 1px solid var(--color-gray-10);
+      border-radius: 8px;
+    }
+    &-input {
+      width: 100%;
+    }
+  }
+}

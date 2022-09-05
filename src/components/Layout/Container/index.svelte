@@ -1,5 +1,5 @@
 <script>
-  import { Sidebar, Header } from '@/components';
+  import { Sidebar, Header, Aside } from '@/components';
 </script>
 
 <!-- 
@@ -18,6 +18,7 @@
     <Header />
     <slot />
   </main>
+  <Aside />
 </div>
 
 <style lang="scss">
