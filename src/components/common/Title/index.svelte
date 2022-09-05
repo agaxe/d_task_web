@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let size: 'lg' | 'md' | 'sm' | 'xs' = 'md';
-  const sizeList = ['lg', 'md', 'sm', 'xs'];
+  export let size: 'xxl' | 'xl' | 'lg' | 'md' | 'sm' = 'md';
+  const sizeList = ['xxl', 'xl', 'lg', 'md', 'sm'];
 
   const tagName = `h${sizeList.findIndex((item) => item === size) + 1}`;
 </script>
