@@ -12,6 +12,7 @@ export { default as MessageBox } from './common/MessageBox/index.svelte';
 export { default as Profile } from './common/Profile/index.svelte';
 export { default as Lottie } from './common/Lottie/index.svelte';
 export { default as Title } from './common/Title/index.svelte';
+export { default as Badge } from './common/Badge/index.svelte';
 
 //* layout
 export { default as Sidebar } from './Layout/Sidebar/index.svelte';
