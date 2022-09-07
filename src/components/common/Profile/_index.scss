@@ -4,7 +4,7 @@
   &.size {
     $size-theme: (
       'lg': 126px,
-      'md': 56px,
+      'md': 40px,
       'sm': 32px
     );
     @each $key, $value in $size-theme {
