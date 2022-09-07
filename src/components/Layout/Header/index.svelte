@@ -22,10 +22,13 @@
       setQueryString($page, { key: 'keyword', value: searchValue });
     }
   }
+
+  function handleKeyDownSearchInput(e: KeyboardEvent) {
+    if (e.key === 'Enter') handleClickSearchBtn();
+  }
 </script>
 
 <header id="header">
-  {$search.value}
   <h3 class="title">BOARD</h3>
   <ul class="right-area">
     <li
@@ -39,6 +42,7 @@
         class="search-input {!isSearchActive ? 'inactive' : ''}"
         bind:ref={searchInputElement}
         bind:value={searchValue}
+        on:keydown={handleKeyDownSearchInput}
       />
     </li>
     <li><Icon class="icon" name="bell" /></li>

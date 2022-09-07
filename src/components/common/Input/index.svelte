@@ -32,7 +32,13 @@
     <div class="input-icon">
       <Icon name={iconName} />
     </div>
-    <input {...$$restProps} class={`input`} bind:value bind:this={ref} />
+    <input
+      {...$$restProps}
+      class={`input`}
+      bind:value
+      bind:this={ref}
+      on:keydown
+    />
   </div>
 {:else}
   <input
@@ -40,6 +46,7 @@
     class={`input ${$$restProps.class}`}
     bind:value
     bind:this={ref}
+    on:keydown={(e) => console.log(e)}
   />
 {/if}
 
