@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { SvelteComponent } from 'svelte';
+  import { SvelteComponent, onMount } from 'svelte';
   import { Icon, Profile, Input } from '@/components';
   import { clickOutSide } from '@/utils';
   import { search } from '@/store/search';
-  import { setQueryString } from '@/utils';
+  import { setQueryString, getQueryString } from '@/utils';
   import { page } from '$app/stores';
 
   let isSearchActive: boolean;
@@ -15,6 +15,16 @@
       searchInputElement.focus();
     }
   }
+
+  // 쿼리 스트링 value 값 세팅
+  onMount(() => {
+    const qsSearchValue = getQueryString($page, 'keyword');
+    if (qsSearchValue) {
+      searchValue = qsSearchValue;
+      isSearchActive = true;
+      search.update((v) => ({ ...v, value: qsSearchValue }));
+    }
+  });
 
   function handleClickSearchBtn() {
     if (searchValue && isSearchActive) {

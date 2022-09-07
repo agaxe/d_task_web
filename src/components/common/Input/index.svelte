@@ -46,7 +46,7 @@
     class={`input ${$$restProps.class}`}
     bind:value
     bind:this={ref}
-    on:keydown={(e) => console.log(e)}
+    on:keydown
   />
 {/if}
 

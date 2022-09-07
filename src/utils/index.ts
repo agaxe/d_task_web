@@ -23,3 +23,7 @@ export function setQueryString(
   page.url.searchParams.set(key, value);
   goto(`?${page.url.searchParams.toString()}`);
 }
+
+export function getQueryString(page: Page, key = '') {
+  return page.url.searchParams.get(key);
+}
