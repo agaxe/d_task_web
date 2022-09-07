@@ -14,20 +14,28 @@
  -->
 <div id="wrap">
   <Sidebar />
-  <main class="container">
+  <div class="container">
     <Header />
-    <slot />
-  </main>
-  <Aside />
+    <main>
+      <slot />
+    </main>
+    <Aside />
+  </div>
 </div>
 
 <style lang="scss">
   @use './index';
 
   .container {
-    $pd: 32px;
-    padding: $pd;
-    padding-top: calc(var(--layout-header-h) + #{$pd});
-    background-color: #f4f7f9;
+    padding-top: var(--layout-header-h);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr var(--layout-aside-w);
+    background-color: var(--color-white);
+    main {
+      $pd: 32px;
+      padding: $pd;
+      background-color: #f4f7f9;
+    }
   }
 </style>
