@@ -10,3 +10,14 @@ $screen-lg: 1440px;
     @content;
   }
 }
+
+// chip, badge 에 사용되는 컬러 테마
+@mixin color-theme {
+  $colors: (pink, green, blue, bronze, purple);
+  @each $color in $colors {
+    &.#{'' + $color} {
+      color: var(--color-#{$color});
+      background-color: var(--color-bg-#{$color});
+    }
+  }
+}

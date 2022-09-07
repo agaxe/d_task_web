@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let theme: 'purple' | 'bronze' | 'pink' | 'blue' | 'green' = 'purple';
+  import { ColorThemeType } from '@/shared/type';
+  export let theme: ColorThemeType = 'purple';
   export let text: string;
 </script>
 
