@@ -5,15 +5,20 @@
   import { search } from '@/store/search';
   import { setQueryString, getQueryString } from '@/utils';
   import { page } from '$app/stores';
+  import { asideState } from '@/store/aside';
 
   let isSearchActive: boolean;
   let searchInputElement: SvelteComponent;
   let searchValue: string = '';
 
-  $: {
-    if (isSearchActive) {
-      searchInputElement.focus();
-    }
+  // 검색을 하는 경우 -> 검색 결과 영역 active
+  $: if ($search.value === searchValue) {
+    asideState.update((v) => ({ ...v, isActive: true }));
+  }
+
+  // 검색 input focus
+  $: if (isSearchActive) {
+    searchInputElement.focus();
   }
 
   // 쿼리 스트링 value 값 세팅
