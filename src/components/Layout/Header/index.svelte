@@ -2,7 +2,7 @@
   import { SvelteComponent, onMount } from 'svelte';
   import { Icon, Profile, Input } from '@/components';
   import { clickOutSide } from '@/utils';
-  import { search } from '@/store/search';
+  import { searchState } from '@/store/search';
   import { noticeState } from '@/store/notice';
   import { setQueryString, getQueryString } from '@/utils';
   import { page } from '$app/stores';
@@ -13,7 +13,7 @@
   let searchValue: string = '';
 
   // 검색을 하는 경우 -> 검색 결과 영역 active
-  $: if ($search.value === searchValue) {
+  $: if ($searchState.value === searchValue) {
     asideState.update((v) => ({ ...v, isActive: true, activeType: 'SEARCH' }));
   }
 
@@ -28,13 +28,13 @@
     if (qsSearchValue) {
       searchValue = qsSearchValue;
       isSearchActive = true;
-      search.update((v) => ({ ...v, value: qsSearchValue }));
+      searchState.update((v) => ({ ...v, value: qsSearchValue }));
     }
   });
 
   function handleClickSearchBtn() {
     if (searchValue && isSearchActive) {
-      search.update((v) => ({ ...v, value: searchValue }));
+      searchState.update((v) => ({ ...v, value: searchValue }));
       setQueryString($page, { key: 'keyword', value: searchValue });
     }
   }

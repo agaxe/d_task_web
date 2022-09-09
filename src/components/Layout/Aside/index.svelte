@@ -2,7 +2,7 @@
   import { Title, Input } from '@/components';
   import AsideMoreItem from './AsideMoreItem.svelte';
   import AsideMore from './AsideMore.svelte';
-  import { search } from '@/store/search';
+  import { searchState } from '@/store/search';
   import { noticeState } from '@/store/notice';
   import { asideState } from '@/store/aside';
 
@@ -10,7 +10,7 @@
     search: {
       title: '검색결과',
       badgeTheme: 'gray',
-      badgeCount: $search.result.length
+      badgeCount: $searchState.result.length
     },
     notice: {
       title: '알림',
@@ -37,7 +37,7 @@
     badgeTheme={currentAsideMoreInfo.badgeTheme}
   >
     {#if $asideState.activeType === 'SEARCH'}
-      {#each $search.result as item, i (i)}
+      {#each $searchState.result as item, i (i)}
         <AsideMoreItem
           type={currentAsideMoreType}
           title={item.title}

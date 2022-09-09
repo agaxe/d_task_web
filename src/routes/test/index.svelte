@@ -32,7 +32,7 @@
     Lottie,
     Container
   } from '@/components';
-  import { count, countInit } from '@/store/count';
+  import { countState, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
   let isBtnDisabled = false;
@@ -138,12 +138,12 @@
     <Icon name="twitter" class="icon logo-twitter" />
     <hr />
     <div>
-      <h2>count : {$count}</h2>
-      <button on:click={() => count.update((n) => (n > 0 ? n - 1 : n))}
+      <h2>count : {$countState}</h2>
+      <button on:click={() => countState.update((n) => (n > 0 ? n - 1 : n))}
         >-</button
       >
-      <button on:click={() => count.update((n) => n + 1)}>+</button>
-      <button on:click={() => count.set(countInit)}>reset</button>
+      <button on:click={() => countState.update((n) => n + 1)}>+</button>
+      <button on:click={() => countState.set(countInit)}>reset</button>
     </div>
     <br />
     <br />

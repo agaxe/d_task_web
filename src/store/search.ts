@@ -1,17 +1,17 @@
 import { writable } from 'svelte/store';
 
-export interface SearchResultInfoProps {
+export interface SearchResultInfoType {
   title: string;
   desc: string;
   isActive: boolean;
 }
 
-export interface searchType {
+export interface SearchStateType {
   value: string;
-  result: SearchResultInfoProps[];
+  result: SearchResultInfoType[];
 }
 
-export const searchDefault: searchType = {
+export const searchInit: SearchStateType = {
   value: '',
   result: [...Array(10)].map((it, idx) => ({
     title: '서비스페이지',
@@ -19,4 +19,4 @@ export const searchDefault: searchType = {
     isActive: idx % 2 === 0
   }))
 };
-export const search = writable<searchType>(searchDefault);
+export const searchState = writable<SearchStateType>(searchInit);
