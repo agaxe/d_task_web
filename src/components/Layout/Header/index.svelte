@@ -3,6 +3,7 @@
   import { Icon, Profile, Input } from '@/components';
   import { clickOutSide } from '@/utils';
   import { search } from '@/store/search';
+  import { noticeState } from '@/store/notice';
   import { setQueryString, getQueryString } from '@/utils';
   import { page } from '$app/stores';
   import { asideState } from '@/store/aside';
@@ -13,7 +14,7 @@
 
   // 검색을 하는 경우 -> 검색 결과 영역 active
   $: if ($search.value === searchValue) {
-    asideState.update((v) => ({ ...v, isActive: true }));
+    asideState.update((v) => ({ ...v, isActive: true, activeType: 'SEARCH' }));
   }
 
   // 검색 input focus
@@ -41,6 +42,10 @@
   function handleKeyDownSearchInput(e: KeyboardEvent) {
     if (e.key === 'Enter') handleClickSearchBtn();
   }
+
+  function handleClickNoticeIcon() {
+    asideState.update((v) => ({ ...v, isActive: true, activeType: 'NOTICE' }));
+  }
 </script>
 
 <header id="header">
@@ -60,7 +65,12 @@
         on:keydown={handleKeyDownSearchInput}
       />
     </li>
-    <li><Icon class="icon" name="bell" /></li>
+    <li class="notice" on:click={handleClickNoticeIcon}>
+      <Icon class="icon" name="bell" />
+      {#if $noticeState.noticeList.length}
+        <div class="dot" />
+      {/if}
+    </li>
     <li>
       <Profile size="md" />
     </li>

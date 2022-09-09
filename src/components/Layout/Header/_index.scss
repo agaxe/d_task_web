@@ -27,6 +27,20 @@
       height: 24px;
       cursor: pointer;
     }
+    .notice {
+      position: relative;
+      .dot {
+        $size: 6px;
+        width: $size;
+        height: $size;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 50%;
+        background-color: var(--color-red);
+        transform: translate(50%, 0);
+      }
+    }
     .search {
       position: relative;
       height: 56px;
