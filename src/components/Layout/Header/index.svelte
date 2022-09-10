@@ -13,7 +13,7 @@
   let searchValue: string = '';
 
   // 검색을 하는 경우 -> 검색 결과 영역 active
-  $: if ($searchState.value === searchValue) {
+  $: if (searchValue && $searchState.value === searchValue) {
     asideState.update((v) => ({ ...v, isActive: true, activeType: 'SEARCH' }));
   }
 
