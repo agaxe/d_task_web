@@ -33,7 +33,7 @@
           </li>
         {/each}
       </ul>
-      <Button class="content-form__btn" onClick={handleClickLoginBtn}
+      <Button class="content-form__btn" on:click={handleClickLoginBtn}
         >LOGIN</Button
       >
     </div>

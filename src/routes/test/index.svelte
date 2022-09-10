@@ -165,11 +165,13 @@
     <br />
     <Button
       class="test-button"
-      onClick={handleClickButton}
-      isDisabled={isBtnDisabled}>button</Button
+      on:click={handleClickButton}
+      disabled={isBtnDisabled}>button</Button
     >
     <br />
-    <Button class="test-button" onClick={() => (isBtnDisabled = !isBtnDisabled)}
+    <Button
+      class="test-button"
+      on:click={() => (isBtnDisabled = !isBtnDisabled)}
       >Toggle Button disabled</Button
     >
     <ul>

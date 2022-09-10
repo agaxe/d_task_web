@@ -1,13 +1,7 @@
 <script lang="ts">
-  export let onClick: () => void = () => {};
-  export let isDisabled: boolean = false;
 </script>
 
-<button
-  class={`button ${$$restProps.class || ''}`}
-  on:click={() => onClick()}
-  disabled={isDisabled}
->
+<button {...$$restProps} class={`button ${$$restProps.class || ''}`} on:click>
   <p><slot /></p>
 </button>
 
