@@ -19,3 +19,4 @@ export { default as Sidebar } from './Layout/Sidebar/index.svelte';
 export { default as Container } from './Layout/Container/index.svelte';
 export { default as Header } from './Layout/Header/index.svelte';
 export { default as Aside } from './Layout/Aside/index.svelte';
+export { default as WaveBgContainer } from './Layout/WaveBgContainer/index.svelte';
