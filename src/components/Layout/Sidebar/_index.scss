@@ -1,15 +1,21 @@
 #sidebar {
   height: 100%;
   border-right: 1px solid var(--color-gray-10);
+  width: var(--layout-sidebar-w);
+  position: relative;
+  min-width: var(--layout-sidebar-w-min);
+  max-width: var(--layout-sidebar-w-max);
   .inner {
     $common-rows: minmax(auto, 80px);
     display: grid;
     grid-template-rows: $common-rows minmax(auto, 100vh) $common-rows;
-    width: var(--layout-sidebar-w);
+    width: inherit;
     height: 100%;
     position: fixed;
     left: 0;
     top: 0;
+    min-width: inherit;
+    max-width: inherit;
   }
   .logo-wrap {
     padding: 24px;

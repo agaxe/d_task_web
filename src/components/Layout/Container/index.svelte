@@ -30,7 +30,7 @@
     padding-top: var(--layout-header-h);
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr var(--layout-aside-w);
+    grid-template-columns: 1fr auto;
     background-color: var(--color-white);
     main {
       $pd: 32px;

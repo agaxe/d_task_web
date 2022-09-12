@@ -35,8 +35,14 @@
 
   // layout
   --layout-sidebar-w: 300px;
+  --layout-sidebar-w-max: 450px;
+  --layout-sidebar-w-min: 210px;
+
   --layout-header-h: 80px;
+
   --layout-aside-w: 480px;
+  --layout-aside-w-max: 500px;
+  --layout-aside-w-min: 250px;
 }
 
 //* style
@@ -49,4 +55,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.resize {
+  @mixin common-style {
+    user-select: none;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      cursor: col-resize;
+      z-index: 5;
+    }
+  }
+  &-left {
+    @include common-style();
+    &:after {
+      left: 0;
+    }
+  }
+  &-right {
+    @include common-style();
+    &:after {
+      right: 0;
+    }
+  }
 }

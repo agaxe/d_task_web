@@ -9,6 +9,9 @@
   position: relative;
   background-color: inherit;
   overflow: hidden;
+  width: var(--layout-aside-w);
+  min-width: var(--layout-aside-w-min);
+  max-width: var(--layout-aside-w-max);
   .title {
     font-size: 16px;
     user-select: none;

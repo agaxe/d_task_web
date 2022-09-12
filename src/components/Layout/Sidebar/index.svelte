@@ -1,9 +1,14 @@
 <script lang="ts">
   import { Logo, Icon } from '@/components';
   import { menuList } from './data';
+  import { useResize } from '@/utils';
 </script>
 
-<nav id="sidebar">
+<nav
+  id="sidebar"
+  class="resize-right"
+  use:useResize={['--layout-sidebar-w', 'right']}
+>
   <div class="inner">
     <div class="logo-wrap">
       <Logo class="logo" />

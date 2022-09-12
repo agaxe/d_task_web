@@ -5,6 +5,7 @@
   import { searchState } from '@/store/search';
   import { noticeState } from '@/store/notice';
   import { asideState } from '@/store/aside';
+  import { useResize } from '@/utils';
 
   let asideMoreInfo: Record<string, any> = {
     search: {
@@ -23,7 +24,11 @@
   $: currentAsideMoreInfo = asideMoreInfo[currentAsideMoreType];
 </script>
 
-<aside id="aside" class={`${$$restProps.class || ''}`}>
+<aside
+  id="aside"
+  class={`${$$restProps.class || ''} resize-left`}
+  use:useResize={['--layout-aside-w', 'left']}
+>
   <Title class="title">CHAT</Title>
   <div class="msg-wrap">
     <div class="msg-box" />
