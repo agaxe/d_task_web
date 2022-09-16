@@ -35,8 +35,17 @@
   import { countState, countInit } from '@/store/count';
   export let todoList: { title: string }[] = [];
 
+  let isLoading = false;
+  let isDone = false;
+
   let isBtnDisabled = false;
   function handleClickButton() {
+    isLoading = true;
+    isDone = false;
+    setTimeout(() => {
+      isLoading = false;
+      isDone = true;
+    }, 3000);
     console.log('click button');
   }
 
@@ -165,6 +174,14 @@
     <br />
     <Button
       class="test-button"
+      {isLoading}
+      {isDone}
+      on:click={handleClickButton}
+      disabled={isBtnDisabled}>button</Button
+    >
+    <Button
+      class="test-button"
+      theme="grayline"
       on:click={handleClickButton}
       disabled={isBtnDisabled}>button</Button
     >
@@ -188,7 +205,7 @@
   .content {
     border: 1px solid #f0f;
     .test-button {
-      border: 3px solid #f00;
+      //border: 3px solid #f00;
     }
     .icon {
       width: 50px;

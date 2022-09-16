@@ -1,21 +1,97 @@
 .button {
-  padding: 20px 16px;
-  color: var(--color-white);
-  background-color: var(--color-primary);
+  padding: 16px;
   border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   line-height: 1.18;
-  &:enabled:hover {
-    background-color: #3678fd; //! 임시
+
+  //* thtme
+  &.default {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    &:enabled:hover {
+      background-color: var(--color-primary-hover);
+    }
+    &:enabled:active {
+      background-color: var(--color-primary-active);
+    }
   }
-  &:enabled:active {
-    background-color: var(--color-primary); //! 임시
+  &.outline {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    &:enabled:hover {
+      background-color: var(--color-bg-blue);
+    }
+    &:enabled:active {
+      color: var(--color-primary-active);
+      border-color: var(--color-primary-active);
+    }
+  }
+  &.grayline {
+    border: 1px solid var(--color-gray-20);
+    color: var(--color-gray-60);
+    &:enabled:hover {
+      border-color: var(--color-gray-30);
+      color: var(--color-gray-70);
+      background-color: var(--color-gray-5);
+    }
+    &:enabled:active {
+      border-color: var(--color-gray-40);
+      color: var(--color-gray-80);
+      background-color: var(--color-gray-5);
+    }
   }
   &:disabled {
-    background-color: var(--color-gray-30);
     cursor: not-allowed;
+    background-color: var(--color-gray-5);
+    color: var(--color-gray-20);
+    border-color: transparent;
+  }
+  &.done {
+    background-color: var(--color-green) !important;
+    color: var(--color-white) !important;
+    border: none;
+  }
+  &.loading {
+    cursor: not-allowed;
+  }
+
+  .icon {
+    $size: 10px;
+    width: $size;
+    height: $size;
+    margin-left: 8px;
+    &.loader {
+      border: 1px solid var(--color-white);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    &.done {
+      path {
+        fill: none;
+        stroke-width: 1;
+        stroke-dasharray: 23;
+        stroke-dashoffset: 23;
+        animation: draw 1s ease-in-out forwards;
+      }
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
   }
 }
