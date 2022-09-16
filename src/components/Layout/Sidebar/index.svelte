@@ -1,7 +1,10 @@
 <script lang="ts">
   import { Logo, Icon } from '@/components';
-  import { menuList } from './data';
+  import { initMenuList } from './data';
   import { useResize } from '@/utils';
+
+  let menuList = initMenuList;
+  let activeId: string | number = 0;
 </script>
 
 <nav
@@ -15,13 +18,39 @@
     </div>
     <ul class="menu-list custom-scroll">
       {#each menuList as item, i (i)}
-        <li class="menu-item" class:active={i === 0}>
-          <Icon class="icon-feature" name={item.icon} />
-          <p class="text">{item.id}</p>
-          {#if item.children?.length}
-            <div class="icon-chevron" class:active={true}>
-              <Icon name="chevron-down" />
-            </div>
+        <li class="menu-item" class:active={item.id === 'project'}>
+          <div class="wrap" on:click={() => (item.isOpen = !item.isOpen)}>
+            <Icon class="icon-feature" name={item.icon} />
+            <p class="text">{item.id}</p>
+            {#if item.children?.length}
+              <div class="icon-chevron" class:active={true}>
+                <Icon name="chevron-down" />
+              </div>
+            {/if}
+          </div>
+          {#if item.isOpen}
+            <ul class="menu-chd-list">
+              {#each item.children as it, idx (idx)}
+                <li
+                  class="item"
+                  class:active={activeId === `${item.id}.${it.id}`}
+                  on:click={() => (activeId = `${item.id}.${it.id}`)}
+                >
+                  {it.name}
+                  <!-- {isActive ? 'true ' : 'false'} -->
+                </li>
+              {/each}
+              {#if item.id === 'project'}
+                <li
+                  class="item add-item"
+                  class:active={activeId === `add-item`}
+                  on:click={() => (activeId = `add-item`)}
+                >
+                  <Icon class="icon" name="add-round" />
+                  <p>Add new Project</p>
+                </li>
+              {/if}
+            </ul>
           {/if}
         </li>
       {/each}
