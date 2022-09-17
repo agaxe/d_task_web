@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { Logo, Icon } from '@/components';
   import { initMenuList } from './data';
   import { useResize } from '@/utils';
@@ -7,9 +8,10 @@
   let menuList = initMenuList;
   let activeId: string | number = 0;
 
-  $: pageId = $page.params.id;
   $: pagePath = $page.routeId?.split('/')[0];
+  $: pageId = $page.params.id;
   $: pageIdInfo = `${pagePath}.${pageId}`;
+  $: activeId = pageIdInfo;
 </script>
 
 <nav
@@ -36,11 +38,12 @@
           {#if item.isOpen}
             <ul class="menu-chd-list">
               {#each item.children as it, idx (idx)}
+                {@const currentIdInfo = `${item.id}.${it.id}`}
                 <li
                   class="item"
-                  class:active={pageIdInfo === `${item.id}.${it.id}` &&
-                    activeId === `${item.id}.${it.id}`}
-                  on:click={() => (activeId = `${item.id}.${it.id}`)}
+                  class:active={pageIdInfo === currentIdInfo &&
+                    activeId === currentIdInfo}
+                  on:click={() => (activeId = currentIdInfo)}
                 >
                   <a href={`/${item.id}/${it.id}`}>
                     {it.name}
