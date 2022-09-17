@@ -24,6 +24,7 @@
     }
   }
   .menu {
+    $item-pd: 16px 40px;
     &-list {
       overflow-y: auto;
     }
@@ -74,7 +75,13 @@
       justify-items: center;
       padding: 8px 0;
       .item {
-        padding: 16px 40px;
+        a {
+          padding: $item-pd;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          color: inherit;
+        }
         width: calc(100% - 24px * 2);
         color: var(--color-gray-80);
         border-radius: 10px;
@@ -87,8 +94,8 @@
           background-color: var(--color-bg-active);
         }
       }
-
       .add-item {
+        padding: $item-pd;
         display: inline-flex;
         align-items: center;
         color: var(--color-gray-100);

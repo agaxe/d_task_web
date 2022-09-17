@@ -2,9 +2,14 @@
   import { Logo, Icon } from '@/components';
   import { initMenuList } from './data';
   import { useResize } from '@/utils';
+  import { page } from '$app/stores';
 
   let menuList = initMenuList;
   let activeId: string | number = 0;
+
+  $: pageId = $page.params.id;
+  $: pagePath = $page.routeId?.split('/')[0];
+  $: pageIdInfo = `${pagePath}.${pageId}`;
 </script>
 
 <nav
@@ -33,11 +38,11 @@
               {#each item.children as it, idx (idx)}
                 <li
                   class="item"
-                  class:active={activeId === `${item.id}.${it.id}`}
-                  on:click={() => (activeId = `${item.id}.${it.id}`)}
+                  class:active={pageIdInfo === `${item.id}.${it.id}`}
                 >
-                  {it.name}
-                  <!-- {isActive ? 'true ' : 'false'} -->
+                  <a href={`/${item.id}/${it.id}`}>
+                    {it.name}
+                  </a>
                 </li>
               {/each}
               {#if item.id === 'project'}
