@@ -38,7 +38,9 @@
               {#each item.children as it, idx (idx)}
                 <li
                   class="item"
-                  class:active={pageIdInfo === `${item.id}.${it.id}`}
+                  class:active={pageIdInfo === `${item.id}.${it.id}` &&
+                    activeId === `${item.id}.${it.id}`}
+                  on:click={() => (activeId = `${item.id}.${it.id}`)}
                 >
                   <a href={`/${item.id}/${it.id}`}>
                     {it.name}
