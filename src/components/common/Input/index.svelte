@@ -8,6 +8,8 @@
 
   export let iconName = '';
   export let iconAlign = 'NONE';
+  export let label = '';
+  export let id = '';
   // export let placeholder: string = '';
   // export let maxLength: number = 9999;
   // export let readOnly: boolean = false;
@@ -22,33 +24,40 @@
     ref?: any;
     iconName?: string;
     iconAlign?: 'LEFT' | 'RIGHT';
+    label?: string;
+    id?: string;
   }
 </script>
 
-{#if iconName}
-  <div
-    class={`input-wrap icon-${iconAlign.toLowerCase()} ${$$restProps.class}`}
-  >
-    <div class="input-icon">
-      <Icon name={iconName} />
+<div class={`${$$restProps.class || ''}`}>
+  {#if label && id}
+    <label for={id}>{label}</label>
+  {/if}
+  {#if iconName}
+    <div class={`input-wrap icon-${iconAlign.toLowerCase()}`}>
+      <div class="input-icon">
+        <Icon name={iconName} />
+      </div>
+      <input
+        {...$$restProps}
+        {id}
+        class={`input`}
+        bind:value
+        bind:this={ref}
+        on:keydown
+      />
     </div>
+  {:else}
     <input
       {...$$restProps}
       class={`input`}
+      {id}
       bind:value
       bind:this={ref}
       on:keydown
     />
-  </div>
-{:else}
-  <input
-    {...$$restProps}
-    class={`input ${$$restProps.class}`}
-    bind:value
-    bind:this={ref}
-    on:keydown
-  />
-{/if}
+  {/if}
+</div>
 
 <!-- <input
   class={`input ${$$restProps.class}`}

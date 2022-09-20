@@ -32,7 +32,7 @@
   border-radius: 10px;
   box-shadow: box-shadow-border(1px, var(--color-gray-20));
   border: 0;
-  padding: 19px 16px;
+  padding: 18px 16px;
   appearance: none;
   outline: none;
   transition: border $time, box-shadow $time, background-color $time;
@@ -55,4 +55,11 @@
     background-color: var(--color-gray-5);
     cursor: not-allowed;
   }
+}
+label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--color-gray-90);
+  margin-bottom: 4px;
 }
