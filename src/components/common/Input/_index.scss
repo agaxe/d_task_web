@@ -56,10 +56,6 @@
     cursor: not-allowed;
   }
 }
-label {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.2;
-  color: var(--color-gray-90);
+:global(.label) {
   margin-bottom: 4px;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '@/components';
+  import { Icon, Label } from '@/components';
   // export let id = '';
   // export let name: string = '';
   // export let type: string = 'text';
@@ -31,7 +31,7 @@
 
 <div class={`${$$restProps.class || ''}`}>
   {#if label && id}
-    <label for={id}>{label}</label>
+    <Label class="label" {id} text={label} />
   {/if}
   {#if iconName}
     <div class={`input-wrap icon-${iconAlign.toLowerCase()}`}>
