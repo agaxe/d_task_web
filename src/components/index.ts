@@ -14,6 +14,7 @@ export { default as Lottie } from './common/Lottie/index.svelte';
 export { default as Title } from './common/Title/index.svelte';
 export { default as Badge } from './common/Badge/index.svelte';
 export { default as Label } from './common/Label/index.svelte';
+export { default as DatePicker } from './common/DatePicker/index.svelte';
 
 //* layout
 export { default as Sidebar } from './Layout/Sidebar/index.svelte';
