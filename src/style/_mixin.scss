@@ -21,3 +21,34 @@ $screen-lg: 1440px;
     }
   }
 }
+
+// input 스타일
+@mixin input-style {
+  $time: 0.2s;
+  border-radius: 10px;
+  box-shadow: box-shadow-border(1px, var(--color-gray-20));
+  border: 0;
+  padding: 18px 16px;
+  appearance: none;
+  outline: none;
+  transition: border $time, box-shadow $time, background-color $time;
+  color: var(--color-gray-100);
+  line-height: 1.2;
+  font-size: inherit;
+  font-weight: 400;
+  width: 100%;
+  &:hover {
+    background-color: #f6f9ff;
+  }
+  &:focus {
+    box-shadow: box-shadow-border(1px, var(--color-primary)),
+      0px 0px 8px rgba(20, 99, 253, 0.2);
+  }
+  &::placeholder {
+    color: var(--color-gray-20);
+  }
+  &:disabled {
+    background-color: var(--color-gray-5);
+    cursor: not-allowed;
+  }
+}
