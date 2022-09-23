@@ -6,3 +6,10 @@ export type ColorThemeType =
   | 'green'
   | 'gray'
   | 'red';
+
+export type TagInputItemType = {
+  id: number;
+  value: string;
+};
+
+export type TagInputListType = TagInputItemType[];
