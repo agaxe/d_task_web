@@ -5,7 +5,7 @@
   position: relative;
   min-width: var(--layout-sidebar-w-min);
   max-width: var(--layout-sidebar-w-max);
-  .inner {
+  & > .inner {
     $common-rows: minmax(auto, 80px);
     display: grid;
     grid-template-rows: $common-rows minmax(auto, 100vh) $common-rows;
@@ -25,9 +25,6 @@
   }
   .menu {
     $item-pd: 16px 40px;
-    &-list {
-      overflow-y: auto;
-    }
     &-item {
       .wrap {
         position: relative;
@@ -102,13 +99,43 @@
         font-size: 16px;
         cursor: pointer;
         flex-wrap: wrap;
+        position: relative;
         .icon {
           $size: 24px;
           width: $size;
           height: $size;
           margin-right: 8px;
         }
-      }
+        .add-modal {
+          position: absolute;
+          left: calc(100% + 16px + 9px);
+          top: 0;
+          color: initial;
+          cursor: initial;
+          width: max-content;
+          overflow: visible;
+
+          .inner {
+            display: grid;
+            grid-gap: 24px;
+            overflow: inherit;
+          }
+          .title {
+            text-align: center;
+            color: var(--color-primary);
+          }
+          :global(label) {
+            margin-bottom: 4px;
+          }
+          .date-picker {
+            & > .inner {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-gap: 8px;
+            }
+          }
+        } // .add-modal
+      } // .add-item
     }
   }
   .bottom {

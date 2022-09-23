@@ -9,7 +9,7 @@ export const initMenuList: menuItemType[] = [
   {
     id: 'project',
     icon: 'folder',
-    children: [...Array(3)].map((item, idx) => ({
+    children: [...Array(1)].map((item, idx) => ({
       id: idx + 1,
       name: `아트룸즈 ${idx + 1}`
     })), //! 컴포넌트에서 동적 데이터로 변경 예정
