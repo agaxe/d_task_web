@@ -23,7 +23,7 @@
   let startDate: null | Date = null;
   let endDate: null | Date = null;
   let selectMemberList: TagInputListType = [];
-  let isActiveModal = true;
+  let isActiveModal = false;
 
   $: pagePath = $page.routeId?.split('/')[0];
   $: pageId = $page.params.id;
