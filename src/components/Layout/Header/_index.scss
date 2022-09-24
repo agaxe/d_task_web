@@ -62,6 +62,9 @@
         opacity: 1;
         transition: width $time;
         width: 316px;
+        & :global(.input) {
+          position: absolute;
+        }
         &.inactive {
           width: 0;
           padding: 0;
