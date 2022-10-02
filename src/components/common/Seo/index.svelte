@@ -2,7 +2,8 @@
   const name = 'DTASK';
 
   export let page: string = '';
-  export let description: string = 'task app for designer and developer';
+  export let description: string =
+    '디자이너와 개발자 또는 팀을 위한 협업 프로그램 ‘Dtask’';
 
   let title = page ? `${page} | ${name}` : name;
 </script>
