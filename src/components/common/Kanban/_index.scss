@@ -1,0 +1,32 @@
+.kanban {
+  border-radius: 20px;
+  padding: 24px 16px;
+  display: grid;
+  grid-gap: 24px;
+  background-color: var(--color-white);
+  width: var(--layout-kanban-w);
+  grid-auto-rows: min-content;
+  height: max-content;
+  & :global(.kanban-title) {
+    font-size: 18px;
+  }
+  .add-btn {
+    width: 100%;
+    height: 32px;
+    box-shadow: 0px 1px 3px rgba(96, 108, 128, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-10);
+    &:hover {
+      background-color: var(--color-bg-card);
+    }
+  }
+  & :global(.add-icon) {
+    $size: 20px;
+    width: $size;
+    height: $size;
+  }
+}
