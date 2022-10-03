@@ -1,7 +1,12 @@
 <script>
+  import { Kanban } from '@/components';
 </script>
 
-<div>프로젝트 페이지</div>
+<div class="kanban-wrap">
+  <Kanban />
+  <Kanban />
+  <Kanban />
+</div>
 
 <style lang="scss">
   @use './index';

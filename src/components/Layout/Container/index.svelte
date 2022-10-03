@@ -36,6 +36,7 @@
       $pd: 32px;
       padding: $pd;
       background-color: #f4f7f9;
+      overflow-x: auto;
     }
   }
 </style>
