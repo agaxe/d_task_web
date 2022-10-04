@@ -11,19 +11,19 @@ export const memberInit: MemberStateType = {
   memberList: [
     {
       id: 1,
-      name: '구가현'
+      name: '강소영'
     },
     {
       id: 2,
-      name: '은승원'
+      name: '권현정'
     },
     {
       id: 3,
-      name: '이혜빈'
+      name: '남영화'
     },
     {
       id: 4,
-      name: '임상민'
+      name: '김시정'
     }
   ]
 };
