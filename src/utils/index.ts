@@ -1,5 +1,7 @@
 import { Page } from '@sveltejs/kit';
 import { goto } from '$app/navigation';
+import parseISO from 'date-fns/parseISO';
+import format from 'date-fns/format';
 
 export function clickOutSide(node: any) {
   function handleClick(event: any) {
@@ -72,4 +74,11 @@ export function useResize(
       document.removeEventListener('mouseup', resize, false);
     }
   };
+}
+
+export function isoDateToFormatString(
+  date: string,
+  formatString = 'yyyy-MM-dd'
+) {
+  return format(parseISO(date), formatString);
 }
