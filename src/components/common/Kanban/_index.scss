@@ -29,4 +29,9 @@
     width: $size;
     height: $size;
   }
+  .kanban-list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 16px;
+  }
 }
