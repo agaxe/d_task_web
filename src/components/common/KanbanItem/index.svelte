@@ -30,14 +30,14 @@
       </li>
     {/each}
   </ul>
-  <div class="item-info cetner">
-    <div class="created-at cetner">
+  <div class="item-info center">
+    <div class="created-at center">
       <Icon class="icon" name="clock" />
       <strong>{isoDateToFormatString(createdAt)}</strong>
     </div>
-    <ul class="other-info cetner">
+    <ul class="other-info center">
       {#each kanbanOtherInfo as item, i (item.id)}
-        <li class="cetner">
+        <li class="center">
           <Icon class="icon" name="file" />
           <strong>{otherInfoCnt[item.id]}</strong>
         </li>
