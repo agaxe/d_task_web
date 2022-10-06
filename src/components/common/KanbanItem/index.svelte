@@ -7,7 +7,7 @@
   export let title = '';
   export let desc = '';
   export let createdAt = '';
-  export let chipList: (TagInputItemType & { theme: ColorThemeType })[] = [];
+  export let tagList: (TagInputItemType & { theme: ColorThemeType })[] = [];
 
   let otherInfoCnt: Record<string, number> = {
     file: 1,
@@ -15,7 +15,7 @@
   };
 </script>
 
-<li class="kanban-item">
+<li class="kanban-item" on:click>
   <div class="title-area">
     <Title class="title" size="sm">{title}</Title>
     <Icon class="icon icon-delete" name="delete" />
@@ -24,7 +24,7 @@
     {desc}
   </p>
   <ul class="chip-list">
-    {#each chipList as item, i (item.id)}
+    {#each tagList as item, i (item.id)}
       <li>
         <Chip text={item.value} theme={item.theme} />
       </li>

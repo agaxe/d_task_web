@@ -1,6 +1,6 @@
 .textarea {
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   resize: none;
   font-family: Pretendard, sans-serif;
   &:focus {
