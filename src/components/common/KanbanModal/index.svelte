@@ -1,8 +1,29 @@
 <script lang="ts">
   import { Modal, Textarea, Icon, Chip, TagInput } from '@/components';
   import { kanbanState } from '@/store/kanban';
+  import { TagInputListType } from '@/shared/type';
 
   let { kanbanInfo } = $kanbanState;
+  let selectTeams: TagInputListType = [];
+  let isTeamActive = false;
+
+  let allTeams: TagInputListType = [
+    {
+      id: 1,
+      value: 'Design',
+      theme: 'pink'
+    },
+    {
+      id: 2,
+      value: 'FrontEnd',
+      theme: 'purple'
+    },
+    {
+      id: 3,
+      value: 'BackEnd',
+      theme: 'bronze'
+    }
+  ];
 </script>
 
 <Modal
@@ -40,17 +61,20 @@
             <Chip text="TODO" theme="gray" />
           </div>
         </li>
-        <li>
+        <li class="team-area">
           <div class="label-wrap">
             <Icon class="icon" name="user" />
             <strong>팀</strong>
           </div>
-          <div>
-            {#if kanbanInfo.team}
-              {kanbanInfo.team}
-            {:else}
-              <p>선택 안함</p>
-            {/if}
+          <div class="team-input-wrap">
+            <p class="empty-team">선택 안함</p>
+            <div>
+              <TagInput
+                allList={allTeams}
+                bind:selectList={selectTeams}
+                isActive={isTeamActive}
+              />
+            </div>
           </div>
         </li>
         <li>

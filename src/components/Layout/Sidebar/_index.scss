@@ -134,6 +134,9 @@
               grid-gap: 8px;
             }
           }
+          & :global(.member-input .chip) {
+            background-color: var(--color-gray-10);
+          }
         } // .add-modal
       } // .add-item
     }

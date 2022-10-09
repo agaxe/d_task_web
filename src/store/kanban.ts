@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { ColorThemeType } from '@/shared/type';
+import { ColorThemeType, TagInputListType } from '@/shared/type';
 
 interface KanbanStateType {
   kanbanList: {
@@ -22,7 +22,7 @@ interface KanbanStateType {
     title: string;
     desc: string;
     status: string;
-    team: string;
+    teams: TagInputListType;
     userName: string;
     createdAt: string;
     deadlineAt: string;
@@ -73,7 +73,7 @@ export const kanbanInit: KanbanStateType = {
     title: '',
     desc: '',
     status: '',
-    team: '',
+    teams: [],
     userName: '홍길동',
     createdAt: '',
     deadlineAt: '',

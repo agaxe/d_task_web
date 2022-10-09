@@ -10,6 +10,7 @@ export type ColorThemeType =
 export type TagInputItemType = {
   id: number;
   value: string;
+  theme?: ColorThemeType;
 };
 
 export type TagInputListType = TagInputItemType[];

@@ -114,6 +114,7 @@
                         <div>
                           <Label text="멤버" />
                           <TagInput
+                            class="member-input"
                             allList={$memberState.memberList.map((it) => ({
                               id: it.id,
                               value: it.name

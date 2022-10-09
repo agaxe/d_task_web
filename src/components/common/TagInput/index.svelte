@@ -28,7 +28,7 @@
   - 태그를 선택할 수 있는 input 컴포넌트입니다.
  -->
 <div
-  class="tag-input"
+  class={`tag-input ${$$restProps.class || ''} `}
   class:active={isActive}
   on:click={() => (isActive = true)}
   on:outclick={() => (isActive = false)}
@@ -37,7 +37,11 @@
   <ul class="select-list">
     {#each selectList as item, i (item.id)}
       <li class="item" on:click|capture={() => handleClickSelectListChip(item)}>
-        <Chip text={item.value} theme="gray" iconName="close" />
+        <Chip
+          text={item.value}
+          theme={item?.theme || 'gray'}
+          iconName="close"
+        />
       </li>
     {/each}
     <li />
@@ -46,7 +50,7 @@
     <ul class="all-list">
       {#each allList as item, i (item.id)}
         <li class="item" on:click|capture={() => handleClickAllListChip(item)}>
-          <Chip text={item.value} theme="gray" />
+          <Chip text={item.value} theme={item?.theme || 'gray'} />
         </li>
       {/each}
     </ul>

@@ -47,6 +47,45 @@
       }
     }
   }
+  .team-area {
+    .empty-team {
+      color: var(--color-gray-40);
+    }
+    .team-input-wrap {
+      position: relative;
+      height: 20px;
+      & > div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    & :global(.tag-input) {
+      top: 50%;
+      transform: translate(-8px, -50%);
+      border: 0 !important;
+      padding: 8px !important;
+      height: 36px !important;
+      transition: none !important;
+    }
+    & :global(.tag-input:not(.active)) {
+      box-shadow: none !important;
+    }
+    & :global(.tag-input:not(.active) .chip .icon) {
+      display: none;
+    }
+    & :global(.tag-input .chip) {
+      padding: 4px 8px;
+      font-size: 10px;
+      height: 20px;
+    }
+    & :global(.tag-input .chip .icon) {
+      margin: 0;
+    }
+  }
+
   .file-area {
     .empty-file {
       display: flex;
