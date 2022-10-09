@@ -76,7 +76,7 @@ export const kanbanInit: KanbanStateType = {
     teams: [],
     userName: '홍길동',
     createdAt: '',
-    deadlineAt: '',
+    deadlineAt: '2022-07-21T09:35:31.820Z',
     detail: '',
     files: [
       {

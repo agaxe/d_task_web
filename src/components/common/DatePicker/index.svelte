@@ -6,7 +6,7 @@
 
   let locale = localeFromDateFnsLocale(ko);
 
-  export let value: Date | null = null;
+  export let value: Date | null | undefined = null;
   export let format = 'yyyy-MM-dd';
   export let hasIcon = true;
   export let placeholder: Date;

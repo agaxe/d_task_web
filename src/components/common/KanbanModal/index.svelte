@@ -1,7 +1,15 @@
 <script lang="ts">
-  import { Modal, Textarea, Icon, Chip, TagInput } from '@/components';
+  import {
+    Modal,
+    Textarea,
+    Icon,
+    Chip,
+    TagInput,
+    DatePicker
+  } from '@/components';
   import { kanbanState } from '@/store/kanban';
   import { TagInputListType } from '@/shared/type';
+  import { isoDateToFormatString, dateToFormatString } from '@/utils';
 
   let { kanbanInfo } = $kanbanState;
   let selectTeams: TagInputListType = [];
@@ -82,14 +90,21 @@
             <Icon class="icon" name="deadline" />
             <strong>생성 일시</strong>
           </div>
-          <p>{kanbanInfo.userName}</p>
+          <p>{dateToFormatString(new Date(), 'yyyy년 MM월 dd일 aa k:mm')}</p>
         </li>
-        <li>
+        <li class="deadline-area">
           <div class="label-wrap">
             <Icon class="icon" name="date" />
             <strong>마감일(선택)</strong>
           </div>
-          <p>{kanbanInfo.userName}</p>
+          <div>
+            <DatePicker
+              class="deadline-picker"
+              hasIcon={false}
+              value={new Date(kanbanInfo?.deadlineAt)}
+              placeholder={new Date()}
+            />
+          </div>
         </li>
       </ul>
     </div>
