@@ -14,3 +14,7 @@ export type TagInputItemType = {
 };
 
 export type TagInputListType = TagInputItemType[];
+
+export type EventType<T extends HTMLElement> = Event & {
+  currentTarget: EventTarget & T;
+};

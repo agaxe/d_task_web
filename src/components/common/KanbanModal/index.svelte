@@ -8,30 +8,45 @@
     DatePicker
   } from '@/components';
   import { kanbanState } from '@/store/kanban';
-  import { TagInputListType } from '@/shared/type';
-  import { isoDateToFormatString, dateToFormatString } from '@/utils';
+  import { TagInputListType, EventType } from '@/shared/type';
+  import {
+    dateToFormatString,
+    getBase64FromFile,
+    getFileSizeString
+  } from '@/utils';
+  import { allTeams } from './data';
 
   let { kanbanInfo } = $kanbanState;
   let selectTeams: TagInputListType = [];
   let isTeamActive = false;
 
-  let allTeams: TagInputListType = [
-    {
-      id: 1,
-      value: 'Design',
-      theme: 'pink'
-    },
-    {
-      id: 2,
-      value: 'FrontEnd',
-      theme: 'purple'
-    },
-    {
-      id: 3,
-      value: 'BackEnd',
-      theme: 'bronze'
+  async function handleChangeFile(event: EventType<HTMLInputElement>) {
+    const target = event.currentTarget;
+    if (target.files?.length) {
+      const file = target.files[0];
+      const { name, size } = file;
+
+      const fileBase64 = await getBase64FromFile(file);
+      kanbanState.update((state) => {
+        state.kanbanInfo.files.push({
+          name: String(name),
+          file: fileBase64,
+          size: getFileSizeString(size)
+        });
+        return state;
+      });
     }
-  ];
+  }
+
+  function handleClickRemoveFile(idx: number) {
+    kanbanState.update((state) => ({
+      ...state,
+      kanbanInfo: {
+        ...state.kanbanInfo,
+        files: state.kanbanInfo.files.filter((it, i) => i !== idx)
+      }
+    }));
+  }
 </script>
 
 <Modal
@@ -110,14 +125,27 @@
     </div>
     <span class="line" />
     <div class="file-area">
-      {#if !kanbanInfo.files.length}
-        <div>file</div>
-      {:else}
-        <div class="empty-file">
-          <Icon class="icon" name="upload" />
-          <span>파일 업로드</span>
-        </div>
+      {#if $kanbanState.kanbanInfo.files.length}
+        <ul class="upload-file-list">
+          {#each $kanbanState.kanbanInfo.files as item, i (`${item.name}-${i}`)}
+            <li class="upload-file-item">
+              <Icon class="icon" name="document" />
+              <p class="file-name">{item.name}</p>
+              <span class="file-size">{item.size}</span>
+              <Icon
+                class="close-icon"
+                name="close"
+                on:click={() => handleClickRemoveFile(i)}
+              />
+            </li>
+          {/each}
+        </ul>
       {/if}
+      <div class="empty-file">
+        <Icon class="icon" name="upload" />
+        <span>파일 업로드</span>
+        <input type="file" class="file-input" on:change={handleChangeFile} />
+      </div>
     </div>
     <span class="line" />
     <div>

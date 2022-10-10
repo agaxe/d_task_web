@@ -91,3 +91,26 @@ export function dateToFormatString(
 ) {
   return format(date, formatString, { locale });
 }
+
+//* file
+export function getBase64FromFile(
+  file: File
+): Promise<string | ArrayBuffer | null> {
+  return new Promise(function (resolve, reject) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      resolve(reader.result);
+    };
+    reader.onerror = function (error) {
+      reject(error);
+    };
+  });
+}
+export function getFileSizeString(bytes: number) {
+  const idx = Math.floor(Math.log(bytes) / Math.log(1024));
+  return (
+    Number((bytes / Math.pow(1024, idx)).toFixed(2)) * 1 +
+    ['B', 'kB', 'MB', 'GB', 'TB'][idx]
+  );
+}

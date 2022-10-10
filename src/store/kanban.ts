@@ -27,12 +27,11 @@ interface KanbanStateType {
     createdAt: string;
     deadlineAt: string;
     detail: string;
-    files: [
-      {
-        name: string;
-        file: string;
-      }
-    ];
+    files: {
+      name: string;
+      file: string | ArrayBuffer | null;
+      size: string;
+    }[];
   };
 }
 
@@ -78,12 +77,7 @@ export const kanbanInit: KanbanStateType = {
     createdAt: '',
     deadlineAt: '2022-07-21T09:35:31.820Z',
     detail: '',
-    files: [
-      {
-        name: '',
-        file: ''
-      }
-    ]
+    files: []
   }
 };
 
