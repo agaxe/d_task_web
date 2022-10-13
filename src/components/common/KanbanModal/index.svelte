@@ -86,7 +86,9 @@
             <strong>상태</strong>
           </div>
           <div class="team-input-wrap">
-            <p class="empty-tag-input">선택 안함</p>
+            {#if !selectStates.length}
+              <p class="empty-tag-input">선택 안함</p>
+            {/if}
             <div>
               <TagInput
                 allList={allStates}
@@ -102,7 +104,9 @@
             <strong>팀</strong>
           </div>
           <div class="team-input-wrap">
-            <p class="empty-tag-input">선택 안함</p>
+            {#if !selectTeams.length}
+              <p class="empty-tag-input">선택 안함</p>
+            {/if}
             <div>
               <TagInput
                 allList={allTeams}
