@@ -5,7 +5,8 @@
     Icon,
     Chip,
     TagInput,
-    DatePicker
+    DatePicker,
+    Button
   } from '@/components';
   import { kanbanState } from '@/store/kanban';
   import { TagInputListType, EventType } from '@/shared/type';
@@ -14,10 +15,13 @@
     getBase64FromFile,
     getFileSizeString
   } from '@/utils';
-  import { allTeams } from './data';
+  import { allTeams, allStates } from './data';
 
   let { kanbanInfo } = $kanbanState;
   let selectTeams: TagInputListType = [];
+  let selectStates: TagInputListType = [];
+
+  let isStateActive = false;
   let isTeamActive = false;
 
   async function handleChangeFile(event: EventType<HTMLInputElement>) {
@@ -50,6 +54,7 @@
 </script>
 
 <Modal
+  class="kanban-modal"
   on:click={() =>
     kanbanState.update((state) => ({
       ...state,
@@ -80,8 +85,15 @@
             <Icon class="icon" name="filter" />
             <strong>상태</strong>
           </div>
-          <div>
-            <Chip text="TODO" theme="gray" />
+          <div class="team-input-wrap">
+            <p class="empty-tag-input">선택 안함</p>
+            <div>
+              <TagInput
+                allList={allStates}
+                bind:selectList={selectStates}
+                isActive={isStateActive}
+              />
+            </div>
           </div>
         </li>
         <li class="team-area">
@@ -90,7 +102,7 @@
             <strong>팀</strong>
           </div>
           <div class="team-input-wrap">
-            <p class="empty-team">선택 안함</p>
+            <p class="empty-tag-input">선택 안함</p>
             <div>
               <TagInput
                 allList={allTeams}
@@ -151,6 +163,10 @@
     <div>
       <Textarea class="detail-textarea" placeholder="상세내용 입력" />
     </div>
+  </div>
+  <div class="button-group">
+    <Button theme="grayline">취소</Button>
+    <Button>등록</Button>
   </div>
 </Modal>
 
