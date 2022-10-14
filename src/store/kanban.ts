@@ -21,7 +21,7 @@ interface KanbanStateType {
   kanbanInfo: {
     title: string;
     desc: string;
-    status: string;
+    states: TagInputListType;
     teams: TagInputListType;
     userName: string;
     createdAt: string;
@@ -67,11 +67,11 @@ export const kanbanInit: KanbanStateType = {
       ]
     }
   ],
-  isShowKanbanModal: true,
+  isShowKanbanModal: false,
   kanbanInfo: {
     title: '',
     desc: '',
-    status: '',
+    states: [],
     teams: [],
     userName: '홍길동',
     createdAt: '',

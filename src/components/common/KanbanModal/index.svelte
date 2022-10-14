@@ -3,13 +3,12 @@
     Modal,
     Textarea,
     Icon,
-    Chip,
     TagInput,
     DatePicker,
     Button
   } from '@/components';
-  import { kanbanState } from '@/store/kanban';
-  import { TagInputListType, EventType } from '@/shared/type';
+  import { kanbanState, kanbanInit } from '@/store/kanban';
+  import { EventType } from '@/shared/type';
   import {
     dateToFormatString,
     getBase64FromFile,
@@ -18,8 +17,8 @@
   import { allTeams, allStates } from './data';
 
   let { kanbanInfo } = $kanbanState;
-  let selectTeams: TagInputListType = [];
-  let selectStates: TagInputListType = [];
+  let isSubmitLoading = false;
+  let isSubmitDone = false;
 
   let isStateActive = false;
   let isTeamActive = false;
@@ -50,6 +49,20 @@
         files: state.kanbanInfo.files.filter((it, i) => i !== idx)
       }
     }));
+  }
+
+  function handleClickSubmitBtn() {
+    const result = $kanbanState.kanbanInfo;
+    console.log('result', result);
+
+    isSubmitLoading = true;
+
+    setTimeout(() => {
+      isSubmitLoading = false;
+      isSubmitDone = true;
+
+      console.log('완료');
+    }, 3000);
   }
 </script>
 
@@ -86,13 +99,13 @@
             <strong>상태</strong>
           </div>
           <div class="team-input-wrap">
-            {#if !selectStates.length}
+            {#if !kanbanInfo.states.length}
               <p class="empty-tag-input">선택 안함</p>
             {/if}
             <div>
               <TagInput
                 allList={allStates}
-                bind:selectList={selectStates}
+                bind:selectList={kanbanInfo.states}
                 isActive={isStateActive}
               />
             </div>
@@ -104,13 +117,13 @@
             <strong>팀</strong>
           </div>
           <div class="team-input-wrap">
-            {#if !selectTeams.length}
+            {#if !kanbanInfo.teams.length}
               <p class="empty-tag-input">선택 안함</p>
             {/if}
             <div>
               <TagInput
                 allList={allTeams}
-                bind:selectList={selectTeams}
+                bind:selectList={kanbanInfo.teams}
                 isActive={isTeamActive}
               />
             </div>
@@ -165,12 +178,23 @@
     </div>
     <span class="line" />
     <div>
-      <Textarea class="detail-textarea" placeholder="상세내용 입력" />
+      <Textarea
+        class="detail-textarea"
+        placeholder="상세내용 입력"
+        bind:value={kanbanInfo.detail}
+      />
     </div>
   </div>
   <div class="button-group">
-    <Button theme="grayline">취소</Button>
-    <Button>등록</Button>
+    <Button
+      theme="grayline"
+      on:click={() => kanbanState.update(() => kanbanInit)}>취소</Button
+    >
+    <Button
+      on:click={handleClickSubmitBtn}
+      isLoading={isSubmitLoading}
+      isDone={isSubmitDone}>등록</Button
+    >
   </div>
 </Modal>
 
