@@ -10,6 +10,25 @@
       isShowKanbanModal: true
     }));
   }
+
+  function handleClickDeleteBtn(idx: number) {
+    const isDelete = confirm('삭제하시겠습니까?');
+
+    if (isDelete) {
+      console.log('delete', idx);
+
+      //* 1. api
+
+      //* 2. 상태값 적용
+      kanbanState.update((state) => {
+        state.kanbanList = $kanbanState.kanbanList.map((item) => ({
+          ...item,
+          children: item.children.filter((it) => it.id !== idx)
+        }));
+        return state;
+      });
+    }
+  }
 </script>
 
 <div class="kanban-wrap">
@@ -22,6 +41,7 @@
           createdAt={childItem.createdAt}
           tagList={childItem.tagList}
           on:click={() => handleClickKanbanItem(childItem.id)}
+          onClickDelBtn={() => handleClickDeleteBtn(childItem.id)}
         />
       {/each}
     </Kanban>

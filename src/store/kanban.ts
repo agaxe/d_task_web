@@ -43,7 +43,128 @@ export const kanbanInit: KanbanStateType = {
       children: [
         {
           id: 1,
-          title: '타이틀',
+          title: '타이틀 1',
+          desc: '설명글 입니다.',
+          createdAt: new Date().toISOString(),
+          tagList: [
+            {
+              id: 1,
+              value: '테스트1',
+              theme: 'blue'
+            },
+            {
+              id: 2,
+              value: '테스트2',
+              theme: 'green'
+            },
+            {
+              id: 3,
+              value: '테스트3',
+              theme: 'bronze'
+            }
+          ]
+        },
+        {
+          id: 2,
+          title: '타이틀 2',
+          desc: '설명글 입니다.',
+          createdAt: new Date().toISOString(),
+          tagList: [
+            {
+              id: 1,
+              value: '테스트1',
+              theme: 'blue'
+            },
+            {
+              id: 2,
+              value: '테스트2',
+              theme: 'green'
+            },
+            {
+              id: 3,
+              value: '테스트3',
+              theme: 'bronze'
+            }
+          ]
+        },
+        {
+          id: 3,
+          title: '타이틀 3',
+          desc: '설명글 입니다.',
+          createdAt: new Date().toISOString(),
+          tagList: [
+            {
+              id: 1,
+              value: '테스트1',
+              theme: 'blue'
+            },
+            {
+              id: 2,
+              value: '테스트2',
+              theme: 'green'
+            },
+            {
+              id: 3,
+              value: '테스트3',
+              theme: 'bronze'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'test title',
+      children: [
+        {
+          id: 34,
+          title: '타이틀 1',
+          desc: '설명글 입니다.',
+          createdAt: new Date().toISOString(),
+          tagList: [
+            {
+              id: 1,
+              value: '테스트1',
+              theme: 'blue'
+            },
+            {
+              id: 2,
+              value: '테스트2',
+              theme: 'green'
+            },
+            {
+              id: 3,
+              value: '테스트3',
+              theme: 'bronze'
+            }
+          ]
+        },
+        {
+          id: 21,
+          title: '타이틀 2',
+          desc: '설명글 입니다.',
+          createdAt: new Date().toISOString(),
+          tagList: [
+            {
+              id: 1,
+              value: '테스트1',
+              theme: 'blue'
+            },
+            {
+              id: 2,
+              value: '테스트2',
+              theme: 'green'
+            },
+            {
+              id: 3,
+              value: '테스트3',
+              theme: 'bronze'
+            }
+          ]
+        },
+        {
+          id: 89,
+          title: '타이틀 3',
           desc: '설명글 입니다.',
           createdAt: new Date().toISOString(),
           tagList: [

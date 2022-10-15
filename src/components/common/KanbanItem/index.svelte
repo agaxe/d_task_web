@@ -8,6 +8,7 @@
   export let desc = '';
   export let createdAt = '';
   export let tagList: (TagInputItemType & { theme: ColorThemeType })[] = [];
+  export let onClickDelBtn = () => {};
 
   let otherInfoCnt: Record<string, number> = {
     file: 1,
@@ -15,10 +16,10 @@
   };
 </script>
 
-<li class="kanban-item" on:click>
+<li class="kanban-item" on:click|self>
   <div class="title-area">
     <Title class="title" size="sm">{title}</Title>
-    <Icon class="icon icon-delete" name="delete" />
+    <Icon class="icon icon-delete" name="delete" on:click={onClickDelBtn} />
   </div>
   <p class="desc">
     {desc}
