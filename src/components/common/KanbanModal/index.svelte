@@ -1,4 +1,5 @@
 <script lang="ts">
+  import cloneDeep from 'lodash/cloneDeep';
   import {
     Modal,
     Textarea,
@@ -7,7 +8,7 @@
     DatePicker,
     Button
   } from '@/components';
-  import { kanbanState, kanbanInit } from '@/store/kanban';
+  import { kanbanState } from '@/store/kanban';
   import { EventType } from '@/shared/type';
   import {
     dateToFormatString,
@@ -17,6 +18,7 @@
   import { allTeams, allStates } from './data';
 
   let { kanbanInfo } = $kanbanState;
+  let kanbanInitInfo = cloneDeep(kanbanInfo);
   let isSubmitLoading = false;
   let isSubmitDone = false;
 
@@ -64,16 +66,18 @@
       console.log('완료');
     }, 3000);
   }
-</script>
 
-<Modal
-  class="kanban-modal"
-  on:click={() =>
+  function handleCloseModal() {
+    console.log('close');
     kanbanState.update((state) => ({
       ...state,
-      isShowKanbanModal: false
-    }))}
->
+      isShowKanbanModal: false,
+      kanbanInfo: kanbanInitInfo
+    }));
+  }
+</script>
+
+<Modal class="kanban-modal" on:click={handleCloseModal}>
   <div class="kanban-info">
     <div>
       <input
@@ -181,15 +185,12 @@
       <Textarea
         class="detail-textarea"
         placeholder="상세내용 입력"
-        bind:value={kanbanInfo.detail}
+        bind:value={$kanbanState.kanbanInfo.detail}
       />
     </div>
   </div>
   <div class="button-group">
-    <Button
-      theme="grayline"
-      on:click={() => kanbanState.update(() => kanbanInit)}>취소</Button
-    >
+    <Button theme="grayline" on:click={handleCloseModal}>취소</Button>
     <Button
       on:click={handleClickSubmitBtn}
       isLoading={isSubmitLoading}
