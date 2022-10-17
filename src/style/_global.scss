@@ -63,30 +63,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.resize {
+.resize-bar {
   @mixin common-style {
     user-select: none;
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 10px;
-      height: 100%;
-      cursor: col-resize;
-      z-index: 5;
-    }
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 5;
   }
   &-left {
     @include common-style();
-    &:after {
-      left: 0;
-    }
+    left: 0;
   }
   &-right {
     @include common-style();
-    &:after {
-      right: 0;
-    }
+    right: 0;
   }
 }
 .center {

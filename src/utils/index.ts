@@ -57,7 +57,12 @@ export function useResize(
     }
   }
 
-  node.addEventListener('mousedown', () => {
+  // resize bar element 생성
+  const resizeBar = document.createElement('div');
+  resizeBar.classList.add(`resize-bar-${moveDirection}`);
+  node.appendChild(resizeBar);
+
+  resizeBar.addEventListener('mousedown', () => {
     document.addEventListener('mousemove', resize, false);
     document.addEventListener(
       'mouseup',
