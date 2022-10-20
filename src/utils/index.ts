@@ -41,6 +41,8 @@ export function useResize(
   node: HTMLElement,
   [varName, moveDirection = 'right']: [string, 'right' | 'left']
 ) {
+  let size = 0;
+
   function resize(e: MouseEvent) {
     const root = document.documentElement;
     function getVariableValue(value: string) {
@@ -54,6 +56,7 @@ export function useResize(
 
     if (minWidth <= value && maxWidth >= value) {
       root.style.setProperty(varName, `${value}px`);
+      size = value;
     }
   }
 
@@ -67,15 +70,23 @@ export function useResize(
     document.addEventListener(
       'mouseup',
       () => {
+        const sizeStorageData = localStorage.getItem('size') || '{}';
+        localStorage.setItem(
+          'size',
+          JSON.stringify({
+            ...JSON.parse(sizeStorageData),
+            [varName]: size
+          })
+        );
         document.removeEventListener('mousemove', resize, false);
       },
-      false
+      { once: true }
     );
   });
 
   return {
     destroy() {
-      node.removeEventListener('mousedown', () => {}, false);
+      resizeBar.removeEventListener('mousedown', () => {}, false);
       document.removeEventListener('mousemove', resize, false);
       document.removeEventListener('mouseup', resize, false);
     }
