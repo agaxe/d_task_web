@@ -1,17 +1,24 @@
 #aside {
-  $pd-hor: 24px;
-  height: 100%;
-  overflow-y: auto;
-  padding: $pd-hor 16px;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  row-gap: 24px;
   position: relative;
+  height: calc(100% - #{var(--layout-header-h)});
   background-color: inherit;
-  overflow: hidden;
   width: var(--layout-aside-w);
   min-width: var(--layout-aside-w-min);
   max-width: var(--layout-aside-w-max);
+  .aside-wrap {
+    $pd-hor: 24px;
+    position: fixed;
+    top: var(--layout-header-h);
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+    padding: $pd-hor 16px;
+    display: grid;
+    row-gap: 24px;
+    grid-template-rows: auto 1fr;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .title {
     font-size: 16px;
     user-select: none;

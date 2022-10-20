@@ -29,39 +29,41 @@
   class={`${$$restProps.class || ''} resize-left`}
   use:useResize={['--layout-aside-w', 'left']}
 >
-  <Title class="title">CHAT</Title>
-  <div class="msg-wrap">
-    <div class="msg-box" />
-    <div class="msg-input-box">
-      <Input iconName="send" iconAlign="RIGHT" class="msg-input" />
+  <div class="aside-wrap">
+    <Title class="title">CHAT</Title>
+    <div class="msg-wrap">
+      <div class="msg-box" />
+      <div class="msg-input-box">
+        <Input iconName="send" iconAlign="RIGHT" class="msg-input" />
+      </div>
     </div>
+    <AsideMore
+      title={currentAsideMoreInfo.title}
+      badgeCount={currentAsideMoreInfo.badgeCount || 0}
+      badgeTheme={currentAsideMoreInfo.badgeTheme}
+    >
+      {#if $asideState.activeType === 'SEARCH'}
+        {#each $searchState.result as item, i (i)}
+          <AsideMoreItem
+            type={currentAsideMoreType}
+            title={item.title}
+            content={item.desc}
+            isActive={item.isActive}
+          />
+        {/each}
+      {:else}
+        {#each $noticeState.noticeList as item, i (i)}
+          <AsideMoreItem
+            type={currentAsideMoreType}
+            title={item.user.name}
+            content={item.desc}
+            profileImg={item.user.profileImg}
+            createdAt={item.createdAt}
+          />
+        {/each}
+      {/if}
+    </AsideMore>
   </div>
-  <AsideMore
-    title={currentAsideMoreInfo.title}
-    badgeCount={currentAsideMoreInfo.badgeCount || 0}
-    badgeTheme={currentAsideMoreInfo.badgeTheme}
-  >
-    {#if $asideState.activeType === 'SEARCH'}
-      {#each $searchState.result as item, i (i)}
-        <AsideMoreItem
-          type={currentAsideMoreType}
-          title={item.title}
-          content={item.desc}
-          isActive={item.isActive}
-        />
-      {/each}
-    {:else}
-      {#each $noticeState.noticeList as item, i (i)}
-        <AsideMoreItem
-          type={currentAsideMoreType}
-          title={item.user.name}
-          content={item.desc}
-          profileImg={item.user.profileImg}
-          createdAt={item.createdAt}
-        />
-      {/each}
-    {/if}
-  </AsideMore>
 </aside>
 
 <style lang="scss" module>
