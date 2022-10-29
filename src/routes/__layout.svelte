@@ -2,6 +2,7 @@
 <script>
   import '@/style/index.scss';
   import { beforeUpdate } from 'svelte';
+  import Toast from '@/components/common/Toast/index.svelte';
 
   // localStorage 에 size 데이터가 존재하는 경우 적용
   beforeUpdate(() => {
@@ -21,6 +22,7 @@
   <li><a href="/test">test</a></li>
 </ul>
 <slot />
+<Toast />
 
 <style>
   .temp-menu {

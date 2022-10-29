@@ -1,0 +1,22 @@
+#toast {
+  position: fixed;
+  z-index: 9999999;
+  background-color: inherit;
+  display: grid;
+  grid-gap: 16px;
+
+  & :global(.toast-item) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 50px;
+    padding-left: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    min-width: 324px;
+    font-size: 16px;
+  }
+}

@@ -19,6 +19,7 @@ export { default as TagInput } from './common/TagInput/index.svelte';
 export { default as Kanban } from './common/Kanban/index.svelte';
 export { default as KanbanItem } from './common/KanbanItem/index.svelte';
 export { default as KanbanModal } from './common/KanbanModal/index.svelte';
+export { default as Toast } from './common/Toast/index.svelte';
 
 //* layout
 export { default as Sidebar } from './Layout/Sidebar/index.svelte';
