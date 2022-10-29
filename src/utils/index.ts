@@ -31,6 +31,11 @@ export function getQueryString(page: Page, key = '') {
   return page.url.searchParams.get(key);
 }
 
+export function setCssVariable(name: string, value: string) {
+  const root = document.documentElement;
+  root.style.setProperty(name, value);
+}
+
 /**
  * - 넓이를 리사이징할 때 사용되는 함수입니다.
  * @param node - 해당 element
@@ -55,7 +60,7 @@ export function useResize(
     const value = moveDirection === 'right' ? e.x : root.clientWidth - e.x;
 
     if (minWidth <= value && maxWidth >= value) {
-      root.style.setProperty(varName, `${value}px`);
+      setCssVariable(varName, `${value}px`);
       size = value;
     }
   }
