@@ -39,7 +39,7 @@ export const kanbanInit: KanbanStateType = {
   kanbanList: [
     {
       id: 1,
-      title: 'test title',
+      title: 'test title 1',
       children: [
         {
           id: 1,
@@ -114,7 +114,7 @@ export const kanbanInit: KanbanStateType = {
     },
     {
       id: 2,
-      title: 'test title',
+      title: 'test title 2',
       children: [
         {
           id: 34,

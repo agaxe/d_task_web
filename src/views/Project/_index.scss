@@ -1,7 +1,9 @@
 .kanban-wrap {
-  display: grid;
-  grid-auto-rows: min-content;
-  grid-template-columns: repeat(auto-fill, var(--layout-kanban-w));
-  grid-auto-flow: column;
-  grid-gap: 24px;
+  & :global(.dnd-wrap) {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, var(--layout-kanban-w));
+    grid-auto-flow: column;
+    grid-gap: 24px;
+  }
 }
