@@ -13,5 +13,18 @@
         "parser": "css"
       }
     }
-  ]
+  ],
+  "importOrder": [
+    "^svelte$",
+    "^svelte/(.*)$",
+    "^@sveltejs/kit(.*)$",
+    "^$app/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/components/(.*)",
+    "^@/(views|utils|context|hooks|lib|pages|routes|services|styles|ui|shared|store)/?(.*)$",
+    "\\.(c|le|sc)ss$",
+    "^[./]"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true
 }
