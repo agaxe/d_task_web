@@ -1,21 +1,23 @@
 import { writable } from 'svelte/store';
 import { ColorThemeType, TagInputListType } from '@/shared/type';
 
-interface KanbanStateType {
+export interface kanbanListChildrenType {
+  id: number;
+  title: string;
+  desc: string;
+  createdAt: string;
+  tagList: {
+    id: number;
+    value: string;
+    theme: ColorThemeType;
+  }[];
+}
+
+export interface KanbanStateType {
   kanbanList: {
     id: number;
     title: string;
-    children: {
-      id: number;
-      title: string;
-      desc: string;
-      createdAt: string;
-      tagList: {
-        id: number;
-        value: string;
-        theme: ColorThemeType;
-      }[];
-    }[];
+    children: kanbanListChildrenType[];
   }[];
   isShowKanbanModal: boolean;
   kanbanInfo: {

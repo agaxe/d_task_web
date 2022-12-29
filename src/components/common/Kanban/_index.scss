@@ -1,11 +1,8 @@
 .kanban {
   border-radius: 20px;
   padding: 24px 16px;
-  display: grid;
-  grid-gap: 24px;
   background-color: var(--color-white);
   width: var(--layout-kanban-w);
-  grid-auto-rows: min-content;
   height: max-content;
   & :global(.kanban-title) {
     font-size: 18px;
@@ -18,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 24px 0;
     background-color: var(--color-white);
     border: 1px solid var(--color-gray-10);
     &:hover {
@@ -28,10 +26,5 @@
     $size: 20px;
     width: $size;
     height: $size;
-  }
-  .kanban-list {
-    display: grid;
-    grid-auto-flow: row;
-    grid-gap: 16px;
   }
 }

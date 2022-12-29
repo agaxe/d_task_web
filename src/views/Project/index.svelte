@@ -1,7 +1,12 @@
 <script lang="ts">
+  import { dndzone } from 'svelte-dnd-action';
+  import { flip } from 'svelte/animate';
   import { Kanban, KanbanItem, KanbanModal } from '@/components';
-  import { kanbanState } from '@/store/kanban';
-  import Dnd from '@/components/common/Dnd/index.svelte';
+  import {
+    KanbanStateType,
+    kanbanListChildrenType,
+    kanbanState
+  } from '@/store/kanban';
 
   function handleClickKanbanItem(id: number) {
     // id 를 통해 정보를 가져와서 store 에 update
@@ -31,41 +36,105 @@
     }
   }
 
-  function setItems(items: any) {
+  let columnItems: KanbanStateType['kanbanList'] = $kanbanState.kanbanList;
+  const flipDurationMs = 200;
+  const outlineStyle = {
+    dropTargetStyle: { outline: 'none' }
+  };
+  type dndEventType = CustomEvent<DndEvent>;
+  type kandanIdType = kanbanListChildrenType['id'];
+
+  // 부모 칸반
+  function setKanbanData(e: dndEventType) {
+    columnItems = e.detail.items as KanbanStateType['kanbanList'];
+  }
+  function handleDndConsiderColumns(e: dndEventType) {
+    setKanbanData(e);
+  }
+  function handleDndFinalizeColumns(e: dndEventType) {
+    setKanbanData(e);
+
     kanbanState.update((state) => ({
       ...state,
-      kanbanList: items
+      kanbanList: columnItems
     }));
+
+    fetchKanbanData();
   }
 
-  function handleDndFinalize(result: any) {
-    //* update api
-    console.log('result', result)
+  // 자식 칸반
+  function setKanbanItemData(cid: kandanIdType, e: dndEventType) {
+    const colIdx = columnItems.findIndex((c) => c.id === cid);
+    columnItems[colIdx].children = e.detail.items as kanbanListChildrenType[];
+    columnItems = [...columnItems];
+  }
+  function handleDndConsiderCards(cid: kandanIdType, e: dndEventType) {
+    setKanbanItemData(cid, e);
+  }
+  function handleDndFinalizeCards(cid: kandanIdType, e: dndEventType) {
+    setKanbanItemData(cid, e);
+
+    kanbanState.update((state) => ({
+      ...state,
+      kanbanList: columnItems
+    }));
+
+    fetchKanbanData();
+  }
+
+  function fetchKanbanData() {
+    console.log('fetch kanbanList', $kanbanState.kanbanList);
   }
 </script>
 
 <div class="kanban-wrap">
-  <Dnd finalize={handleDndFinalize} {setItems} items={$kanbanState.kanbanList}>
-    {#each $kanbanState.kanbanList as item, i (item.id)}
-      <div>
+  <div
+    class="dnd-kanban-wrap"
+    use:dndzone={{
+      items: columnItems,
+      flipDurationMs,
+      type: 'columns',
+      ...outlineStyle
+    }}
+    on:consider={handleDndConsiderColumns}
+    on:finalize={handleDndFinalizeColumns}
+  >
+    {#each columnItems as item, i (item.id)}
+      <div animate:flip={{ duration: flipDurationMs }}>
         <Kanban title={item.title}>
-          {#each item.children as childItem, idx (childItem.id)}
-            <KanbanItem
-              title={childItem.title}
-              desc={childItem.desc}
-              createdAt={childItem.createdAt}
-              tagList={childItem.tagList}
-              on:click={() => handleClickKanbanItem(childItem.id)}
-              onClickDelBtn={() => handleClickDeleteBtn(childItem.id)}
-            />
-          {/each}
+          <div
+            class="dnd-kanban-list"
+            use:dndzone={{
+              items: item.children,
+              flipDurationMs,
+              ...outlineStyle
+            }}
+            on:consider={(e) => handleDndConsiderCards(item.id, e)}
+            on:finalize={(e) => handleDndFinalizeCards(item.id, e)}
+          >
+            {#each item.children as childItem, idx (childItem.id)}
+              <li
+                class="dnd-kanban-item"
+                animate:flip={{ duration: flipDurationMs }}
+              >
+                <KanbanItem
+                  title={childItem.title}
+                  desc={childItem.desc}
+                  createdAt={childItem.createdAt}
+                  tagList={childItem.tagList}
+                  on:click={() => handleClickKanbanItem(childItem.id)}
+                  onClickDelBtn={() => handleClickDeleteBtn(childItem.id)}
+                />
+              </li>
+            {/each}
+          </div>
         </Kanban>
       </div>
     {/each}
-    {#if $kanbanState.isShowKanbanModal}
-      <KanbanModal />
-    {/if}
-  </Dnd>
+  </div>
+  {#if $kanbanState.isShowKanbanModal}
+    <KanbanModal />
+  {/if}
 </div>
 
 <style lang="scss">

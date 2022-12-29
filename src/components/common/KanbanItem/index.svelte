@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Title, Chip, Icon } from '@/components';
-  import { kanbanOtherInfo } from './data';
+  import { Chip, Icon, Title } from '@/components';
+  import { ColorThemeType, TagInputItemType } from '@/shared/type';
   import { isoDateToFormatString } from '@/utils';
-  import { TagInputItemType, ColorThemeType } from '@/shared/type';
+  import { kanbanOtherInfo } from './data';
 
   export let title = '';
   export let desc = '';
@@ -16,7 +16,7 @@
   };
 </script>
 
-<li class="kanban-item" on:click|self>
+<div class="kanban-item" on:click|self>
   <div class="title-area">
     <Title class="title" size="sm">{title}</Title>
     <Icon class="icon icon-delete" name="delete" on:click={onClickDelBtn} />
@@ -45,7 +45,7 @@
       {/each}
     </ul>
   </div>
-</li>
+</div>
 
 <style lang="scss">
   @use './index';
