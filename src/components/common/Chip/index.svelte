@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { ColorThemeType } from '@/shared/type';
   import { Icon } from '@/components';
+  import type { ColorThemeType } from '@/shared/type';
 
   export let theme: ColorThemeType = 'purple';
   export let text: string;

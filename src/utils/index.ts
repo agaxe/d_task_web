@@ -1,8 +1,8 @@
-import { Page } from '@sveltejs/kit';
+import type { Page } from '@sveltejs/kit';
 import { goto } from '$app/navigation';
-import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 import { ko } from 'date-fns/locale';
+import parseISO from 'date-fns/parseISO';
 
 export function clickOutSide(node: any) {
   function handleClick(event: any) {

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Chip, Icon, Title } from '@/components';
-  import { ColorThemeType, TagInputItemType } from '@/shared/type';
+  import type { ColorThemeType, TagInputItemType } from '@/shared/type';
   import { isoDateToFormatString } from '@/utils';
   import { kanbanOtherInfo } from './data';
 

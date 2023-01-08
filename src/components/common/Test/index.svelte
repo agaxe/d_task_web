@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { TestType } from './type';
   import { getTestInfo } from './index';
+  import type { TestType } from './type';
 
   let testInfo: TestType = getTestInfo();
 </script>

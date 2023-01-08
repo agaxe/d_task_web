@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { ColorThemeType, TagInputListType } from '@/shared/type';
+import type { ColorThemeType, TagInputListType } from '@/shared/type';
 
 export interface kanbanListChildrenType {
   id: number;

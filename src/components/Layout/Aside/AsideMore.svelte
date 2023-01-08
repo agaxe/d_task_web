@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Icon, Title, Badge } from '@/components';
+  import { Badge, Icon, Title } from '@/components';
+  import type { ColorThemeType } from '@/shared/type';
   import { asideState } from '@/store/aside';
-  import { ColorThemeType } from '@/shared/type';
 
   export let title = '';
   export let badgeTheme: ColorThemeType = 'gray';

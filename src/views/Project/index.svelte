@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { dndzone } from 'svelte-dnd-action';
   import { flip } from 'svelte/animate';
   import { Kanban, KanbanItem, KanbanModal } from '@/components';
-  import {
-    KanbanStateType,
-    kanbanListChildrenType,
-    kanbanState
-  } from '@/store/kanban';
+  import { dndzone } from 'svelte-dnd-action';
+  import type { KanbanStateType, kanbanListChildrenType } from '@/store/kanban';
+  import { kanbanState } from '@/store/kanban';
 
   function handleClickKanbanItem(id: number) {
     // id 를 통해 정보를 가져와서 store 에 update

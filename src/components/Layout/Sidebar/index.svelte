@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { add } from 'date-fns';
-  import {
-    Logo,
-    Icon,
-    Modal,
-    Title,
-    Input,
-    Button,
-    Label,
-    DatePicker,
-    TagInput
-  } from '@/components';
-  import { initMenuList } from './data';
-  import { useResize } from '@/utils';
   import { page } from '$app/stores';
+  import {
+    Button,
+    DatePicker,
+    Icon,
+    Input,
+    Label,
+    Logo,
+    Modal,
+    TagInput,
+    Title
+  } from '@/components';
+  import { add } from 'date-fns';
+  import type { TagInputListType } from '@/shared/type';
   import { memberState } from '@/store/member';
-  import { TagInputListType } from '@/shared/type';
+  import { useResize } from '@/utils';
+  import { initMenuList } from './data';
 
   let menuList = initMenuList;
   let activeId: string | number = 0;
@@ -25,7 +25,7 @@
   let selectMemberList: TagInputListType = [];
   let isActiveModal = false;
 
-  $: pagePath = $page.routeId?.split('/')[0];
+  $: pagePath = $page.route.id?.split('/')[0];
   $: pageId = $page.params.id;
   $: pageIdInfo = `${pagePath}.${pageId}`;
   $: activeId = pageIdInfo;

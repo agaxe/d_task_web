@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { ToastType } from '@/shared/type';
+  import type { ToastType } from '@/shared/type';
   import { toastState } from '@/store/toast';
 
   const INTERVAL = '30px';

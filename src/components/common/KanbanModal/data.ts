@@ -1,4 +1,5 @@
-import { TagInputListType } from '@/shared/type';
+import type { TagInputListType } from '@/shared/type';
+
 export const allStates: TagInputListType = [
   {
     id: 1,

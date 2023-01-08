@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import { ToastType } from '@/shared/type';
+import type { ToastType } from '@/shared/type';
 import { toastState } from '@/store/toast';
 
 export function toast(

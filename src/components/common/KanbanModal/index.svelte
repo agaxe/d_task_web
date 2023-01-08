@@ -1,21 +1,21 @@
 <script lang="ts">
-  import cloneDeep from 'lodash/cloneDeep';
   import {
-    Modal,
-    Textarea,
-    Icon,
-    TagInput,
+    Button,
     DatePicker,
-    Button
+    Icon,
+    Modal,
+    TagInput,
+    Textarea
   } from '@/components';
+  import cloneDeep from 'lodash/cloneDeep';
+  import type { EventType } from '@/shared/type';
   import { kanbanState } from '@/store/kanban';
-  import { EventType } from '@/shared/type';
   import {
     dateToFormatString,
     getBase64FromFile,
     getFileSizeString
   } from '@/utils';
-  import { allTeams, allStates } from './data';
+  import { allStates, allTeams } from './data';
 
   let { kanbanInfo } = $kanbanState;
   let kanbanInitInfo = cloneDeep(kanbanInfo);

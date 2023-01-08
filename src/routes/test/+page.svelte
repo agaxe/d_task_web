@@ -18,21 +18,22 @@
 
 <script lang="ts">
   import {
-    Test,
-    Seo,
     Button,
-    Input,
-    Icon,
-    Logo,
-    Textarea,
-    Image,
     Chip,
+    Container,
+    Icon,
+    Image,
+    Input,
+    Logo,
+    Lottie,
     MessageBox,
     Profile,
-    Lottie,
-    Container
+    Seo,
+    Test,
+    Textarea
   } from '@/components';
-  import { countState, countInit } from '@/store/count';
+  import { countInit, countState } from '@/store/count';
+
   export let todoList: { title: string }[] = [];
 
   let isLoading = false;
@@ -137,6 +138,7 @@
     <br />
 
     <Image src="/images/temp-img.jpg" />
+
     <br />
     <Logo class="main-logo" />
     <br />

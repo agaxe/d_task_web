@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { Container, Seo } from '@/components';
   import { MainView } from '@/views';
-  import { Seo, Container } from '@/components';
 </script>
 
 <Seo />

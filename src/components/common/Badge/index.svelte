@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ColorThemeType } from '@/shared/type';
+  import type { ColorThemeType } from '@/shared/type';
 
   export let count: number;
   export let theme: ColorThemeType = 'gray';

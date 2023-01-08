@@ -1,11 +1,17 @@
+import { vitePreprocess } from '@sveltejs/kit/vite';
 import vercel from '@sveltejs/adapter-vercel';
+import { asMarkupPreprocessor } from 'svelte-as-markup-preprocessor';
 import preprocessor from 'svelte-preprocess';
 import { cssModules } from 'svelte-preprocess-cssmodules';
-import { asMarkupPreprocessor } from 'svelte-as-markup-preprocessor';
 
+/** @type {import('@sveltejs/kit').Config} */
 export default {
   //preprocess: preprocessor(),
-  preprocess: [asMarkupPreprocessor([preprocessor()]), cssModules()],
+  preprocess: [
+    vitePreprocess(),
+    asMarkupPreprocessor([preprocessor()]),
+    cssModules()
+  ],
   kit: {
     adapter: vercel({
       edge: false,

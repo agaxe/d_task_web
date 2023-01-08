@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Chip } from '@/components';
-  import { TagInputListType, TagInputItemType } from '@/shared/type';
+  import type { TagInputItemType, TagInputListType } from '@/shared/type';
   import { clickOutSide } from '@/utils';
 
   export let selectList: TagInputListType = [];
