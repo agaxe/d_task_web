@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Title, Input } from '@/components';
-  import AsideMoreItem from './AsideMoreItem.svelte';
-  import AsideMore from './AsideMore.svelte';
-  import { searchState } from '@/store/search';
-  import { noticeState } from '@/store/notice';
   import { asideState } from '@/store/aside';
+  import { noticeState } from '@/store/notice';
+  import { searchState } from '@/store/search';
   import { useResize } from '@/utils';
+  import AsideMore from './AsideMore/AsideMore.svelte';
+  import AsideMoreItem from './AsideMore/AsideMoreItem.svelte';
+  import Message from './Message/Message.svelte';
 
   let asideMoreInfo: Record<string, any> = {
     search: {
@@ -30,13 +30,7 @@
   use:useResize={['--layout-aside-w', 'left']}
 >
   <div class="aside-wrap">
-    <Title class="title">CHAT</Title>
-    <div class="msg-wrap">
-      <div class="msg-box" />
-      <div class="msg-input-box">
-        <Input iconName="send" iconAlign="RIGHT" class="msg-input" />
-      </div>
-    </div>
+    <Message />
     <AsideMore
       title={currentAsideMoreInfo.title}
       badgeCount={currentAsideMoreInfo.badgeCount || 0}

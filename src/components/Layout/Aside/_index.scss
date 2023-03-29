@@ -1,21 +1,18 @@
 #aside {
   position: relative;
-  height: calc(100% - #{var(--layout-header-h)});
   background-color: inherit;
   width: var(--layout-aside-w);
   min-width: var(--layout-aside-w-min);
   max-width: var(--layout-aside-w-max);
+  height: 100%;
   .aside-wrap {
     $pd-hor: 24px;
-    position: fixed;
-    top: var(--layout-header-h);
+    position: relative;
     height: inherit;
     width: inherit;
     background-color: inherit;
     padding: $pd-hor 16px;
-    display: grid;
-    row-gap: 24px;
-    grid-template-rows: auto 1fr;
+    box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
   }

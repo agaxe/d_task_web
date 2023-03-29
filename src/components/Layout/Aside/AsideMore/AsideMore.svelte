@@ -32,6 +32,7 @@
   .aside-more {
     $pd: 24px 16px;
     position: absolute;
+    top: 0;
     left: 100%;
     width: 100%;
     height: 100%;
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-rows: minmax(50px, auto) minmax(50px, 1fr);
     transition: left 0.3s;
+    z-index: 10;
     &.active {
       left: 0;
     }

@@ -33,8 +33,7 @@
     grid-template-columns: 1fr auto;
     background-color: var(--color-white);
     main {
-      $pd: 32px;
-      padding: $pd;
+      padding: 32px;
       background-color: #f4f7f9;
       overflow-x: auto;
     }
